@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="flex flex-col w-full bg-[var(--bg-primary)]">
@@ -57,11 +59,15 @@ export default function Home() {
         <div className="absolute right-0 top-0 w-[860px] h-[860px]">
           <div className="relative w-full h-full">
             {/* Musashi samurai image */}
-            <img
-              src="/images/generated-1771830449125.png"
-              alt="Miyamoto Musashi"
-              className="absolute -left-[50px] top-0 w-[860px] h-[860px] object-cover opacity-65"
-            />
+            <div className="absolute -left-[50px] top-0 w-[860px] h-[860px] opacity-65">
+              <Image
+                src="/images/generated-1771830449125.png"
+                alt="Miyamoto Musashi"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
             {/* Gradient overlays */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0CFF] via-[#0C0C0CFF] to-transparent" style={{backgroundSize: '100% 100%'}} />
@@ -105,11 +111,14 @@ export default function Home() {
               {/* Tweet Header */}
               <div className="flex items-start justify-between gap-[10px] w-full">
                 <div className="flex items-start gap-[10px] flex-1">
-                  <img
-                    src="/images/generated-1771892787267.png"
-                    alt="Profile"
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/generated-1771892787267.png"
+                      alt="Profile"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex flex-col gap-[2px]">
                     <div className="flex items-center gap-1">
                       <span className="font-inter text-[var(--tweet-text)] text-[15px] font-bold">Elon Musk</span>
@@ -217,11 +226,14 @@ export default function Home() {
               {/* Tweet Header */}
               <div className="flex items-start justify-between gap-[10px] w-full">
                 <div className="flex items-start gap-[10px] flex-1">
-                  <img
-                    src="/images/generated-1771892787267.png"
-                    alt="Profile"
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                    <Image
+                      src="/images/generated-1771892787267.png"
+                      alt="Profile"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="flex flex-col gap-[2px]">
                     <div className="flex items-center gap-1">
                       <span className="font-inter text-[var(--tweet-text)] text-[15px] font-bold">Elon Musk</span>
