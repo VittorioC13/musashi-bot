@@ -56,24 +56,25 @@ export default function Home() {
         </div>
 
         {/* Hero Figure - Musashi Image */}
-        <div className="absolute right-0 top-0 w-[860px] h-[860px]">
+        <div className="absolute right-0 top-0 w-[860px] h-[860px] pointer-events-none">
           <div className="relative w-full h-full">
             {/* Musashi samurai image */}
-            <div className="absolute -left-[50px] top-0 w-[860px] h-[860px] opacity-65">
+            <div className="absolute -left-[50px] top-0 w-[860px] h-[860px]">
               <Image
                 src="/images/generated-1771830449125.png"
                 alt="Miyamoto Musashi"
                 fill
-                className="object-cover"
+                className="object-cover opacity-65"
                 priority
+                unoptimized
               />
             </div>
 
-            {/* Gradient overlays */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0CFF] via-[#0C0C0CFF] to-transparent" style={{backgroundSize: '100% 100%'}} />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0C0C0C80] to-[#0C0C0CFF]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-[#0C0C0CFF]" />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#0C0C0C80] to-[#0C0C0CFF]" />
+            {/* Gradient overlays - fade to background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] from-0% via-[#0C0C0C] via-10% to-transparent to-45%" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-70% to-[#0C0C0C] to-100%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent from-85% to-[#0C0C0C] to-100%" />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent from-70% via-[#0C0C0C80] via-85% to-[#0C0C0C] to-100%" />
           </div>
         </div>
 
