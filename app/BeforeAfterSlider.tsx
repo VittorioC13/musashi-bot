@@ -276,20 +276,20 @@ export default function BeforeAfterSlider() {
         <span className="font-jetbrains text-[#FFFFFF60] text-[11px] font-bold tracking-[1px]">Without Musashi</span>
       </div>
 
-      {/* Divider Line */}
+      {/* Divider Line - lighter, more transparent */}
       <div
-        className="absolute top-0 w-[2px] h-full bg-[var(--text-primary)] opacity-60 shadow-[0_0_20px_rgba(255,255,255,0.4)] -translate-x-1/2 z-20 pointer-events-none"
-        style={{ left: `${sliderPosition}%` }}
+        className="absolute top-0 w-[1px] h-full -translate-x-1/2 z-20 pointer-events-none"
+        style={{ left: `${sliderPosition}%`, backgroundColor: 'rgba(255,255,255,0.22)' }}
       />
 
-      {/* Slider Handle */}
+      {/* Slider Handle - smaller, semi-transparent so content shows through */}
       <div
-        className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[var(--text-primary)] rounded-full flex items-center justify-center shadow-[0_2px_16px_rgba(0,0,0,0.6)] cursor-grab active:cursor-grabbing z-30 select-none"
+        className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing z-30 select-none border border-white/40 bg-white/25 backdrop-blur-[2px]"
         style={{ left: `${sliderPosition}%` }}
         onMouseDown={handleMouseDown}
         onTouchStart={() => setIsDragging(true)}
       >
-        <svg className="w-5 h-5 fill-black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-3 h-3 fill-white drop-shadow-[0_0_1px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M8.5 13.5l-1.5 1.5L2 10l5-5 1.5 1.5L5.5 9.5h13l-3-3L17 5l5 5-5 5-1.5-1.5 3-3h-13l3 3z"/>
         </svg>
       </div>
