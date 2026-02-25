@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SmoothScrollLink from "./components/SmoothScrollLink";
 
 export default function Home() {
   return (
@@ -46,9 +47,9 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex gap-4">
-            <button className="px-8 py-[14px] bg-[var(--overlay-light)] border border-[var(--border-lighter)] hover:bg-[var(--overlay-lighter)] transition-colors">
+            <SmoothScrollLink targetId="see-the-difference" className="px-8 py-[14px] bg-[var(--overlay-light)] border border-[var(--border-lighter)] hover:bg-[var(--overlay-lighter)] transition-colors">
               <span className="font-jetbrains text-[var(--text-primary)] text-xs font-bold">Take a look</span>
-            </button>
+            </SmoothScrollLink>
             <button className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
               <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Build-in &gt;&gt;&gt;</span>
             </button>
@@ -57,24 +58,15 @@ export default function Home() {
 
         {/* Hero Figure - Musashi Image */}
         <div className="absolute right-0 top-0 w-[860px] h-[860px] pointer-events-none">
-          <div className="relative w-full h-full">
-            {/* Musashi samurai image */}
-            <div className="absolute -left-[50px] top-0 w-[860px] h-[860px]">
-              <Image
-                src="/images/generated-1771830449125.png"
-                alt="Miyamoto Musashi"
-                fill
-                className="object-cover opacity-65"
-                priority
-                unoptimized
-              />
-            </div>
-
-            {/* Gradient overlays - fade to background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0C0C0C] from-0% via-[#0C0C0C] via-10% to-transparent to-45%" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% via-transparent via-70% to-[#0C0C0C] to-100%" />
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent from-85% to-[#0C0C0C] to-100%" />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent from-70% via-[#0C0C0C80] via-85% to-[#0C0C0C] to-100%" />
+          <div className="relative w-full h-full bg-black">
+            <Image
+              src="/images/generated-1771830449125.png"
+              alt="Miyamoto Musashi"
+              fill
+              className="object-cover object-right opacity-65"
+              priority
+              unoptimized
+            />
           </div>
         </div>
 
@@ -88,7 +80,7 @@ export default function Home() {
       </section>
 
       {/* Before/After Slider Section */}
-      <section className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
+      <section id="see-the-difference" className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
         <span className="font-jetbrains text-[var(--text-lighter)] text-[11px] font-bold tracking-[2px]">
           // SEE THE DIFFERENCE
         </span>

@@ -2,9 +2,9 @@
 
 :root {
   /* Backgrounds */
-  --bg-primary: #0C0C0C;
-  --bg-secondary: #080808;
-  --bg-tertiary: #0A0A0A;
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #020202;
 
   /* Text Colors */
   --text-primary: #FFFFFF;
@@ -39,6 +39,10 @@
 @layer base {
   html, body {
     height: 100%;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   .font-jetbrains {
