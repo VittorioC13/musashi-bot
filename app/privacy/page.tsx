@@ -29,20 +29,20 @@ export default function PrivacyPolicy() {
           </div>
 
           <p className="font-jetbrains text-[var(--text-tertiary)] text-sm mb-10">
-            Last Updated: February 25, 2026
+            Effective Date: February 25, 2026
           </p>
 
-          {/* TL;DR Box */}
+          {/* Summary Box */}
           <div className="bg-[var(--bg-secondary)] border border-[var(--text-primary)] border-l-4 p-6 mb-12">
             <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-bold mb-4">
-              TL;DR - The Important Stuff
+              Privacy Summary
             </h3>
             <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
-              <li><strong>We don&apos;t collect or store your personal data</strong></li>
-              <li><strong>No user accounts, no tracking, no analytics</strong></li>
-              <li><strong>All processing happens locally in your browser</strong></li>
-              <li><strong>We only send data to DeepSeek AI when you explicitly request sentiment analysis</strong></li>
-              <li><strong>100% free, no ads, no data monetization</strong></li>
+              <li>We do not collect or store personal data</li>
+              <li>No user accounts, tracking, or analytics</li>
+              <li>All data processing occurs locally in your browser</li>
+              <li>Data is transmitted to third-party services only when you explicitly request sentiment analysis</li>
+              <li>This service is provided free of charge with no advertising or data monetization</li>
             </ul>
           </div>
 
@@ -52,18 +52,18 @@ export default function PrivacyPolicy() {
               1. Introduction
             </h2>
             <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
-              Musashi (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is a Chrome browser extension that provides AI-powered sentiment analysis and prediction market signals on Twitter/X. This Privacy Policy explains how we handle data when you use our extension.
+              This Privacy Policy describes how Musashi (&quot;we&quot;, &quot;our&quot;, or &quot;the Extension&quot;) handles information when you use our Chrome browser extension. Musashi provides AI-powered sentiment analysis and prediction market signals on the Twitter/X platform. By using the Extension, you agree to the data practices described in this policy.
             </p>
           </section>
 
           {/* Section 2 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              2. Information We Collect
+              2. Information Collection and Use
             </h2>
 
             <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-semibold mb-3">
-              2.1 Data We DO Collect
+              2.1 Information Collected by the Extension
             </h3>
 
             <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-6 mb-6">
@@ -72,81 +72,99 @@ export default function PrivacyPolicy() {
                   <tr className="border-b border-[var(--border-primary)]">
                     <th className="font-jetbrains text-[var(--text-primary)] text-xs font-bold text-left pb-3 pr-4">Data Type</th>
                     <th className="font-jetbrains text-[var(--text-primary)] text-xs font-bold text-left pb-3 pr-4">Purpose</th>
-                    <th className="font-jetbrains text-[var(--text-primary)] text-xs font-bold text-left pb-3">Storage</th>
+                    <th className="font-jetbrains text-[var(--text-primary)] text-xs font-bold text-left pb-3">Storage Location</th>
                   </tr>
                 </thead>
                 <tbody className="font-jetbrains text-[var(--text-secondary)] text-xs">
                   <tr className="border-b border-[var(--border-primary)]">
-                    <td className="py-3 pr-4">Market data</td>
-                    <td className="py-3 pr-4">Match markets to tweets</td>
-                    <td className="py-3">Local browser only</td>
+                    <td className="py-3 pr-4">Prediction market data (titles, odds, URLs)</td>
+                    <td className="py-3 pr-4">To match markets to tweets and display current market information</td>
+                    <td className="py-3">Local browser storage exclusively</td>
                   </tr>
                   <tr className="border-b border-[var(--border-primary)]">
-                    <td className="py-3 pr-4">Tweet content (on request)</td>
-                    <td className="py-3 pr-4">AI sentiment analysis</td>
-                    <td className="py-3">Sent to DeepSeek, not stored</td>
+                    <td className="py-3 pr-4">Tweet content (when analysis is requested)</td>
+                    <td className="py-3 pr-4">To perform AI-powered sentiment analysis</td>
+                    <td className="py-3">Temporarily transmitted to DeepSeek API; not stored by us</td>
                   </tr>
                   <tr>
-                    <td className="py-3 pr-4">User preferences</td>
-                    <td className="py-3 pr-4">Save settings</td>
-                    <td className="py-3">Local browser only</td>
+                    <td className="py-3 pr-4">User preferences and settings</td>
+                    <td className="py-3 pr-4">To maintain extension configuration</td>
+                    <td className="py-3">Local browser storage exclusively</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-semibold mb-3">
-              2.2 Data We DO NOT Collect
+              2.2 Information Not Collected
             </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-3">
+              The Extension does not collect, store, or transmit the following information:
+            </p>
             <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc mb-6">
-              <li>Your Twitter/X username or account information</li>
-              <li>Your browsing history</li>
-              <li>Your personal information (name, email, address, etc.)</li>
-              <li>Your IP address or location</li>
-              <li>Analytics or tracking data</li>
-              <li>Cookies or fingerprinting data</li>
+              <li>Twitter/X account credentials or user identification</li>
+              <li>Browsing history or navigation patterns</li>
+              <li>Personally identifiable information including name, email address, or physical address</li>
+              <li>IP addresses or geolocation data</li>
+              <li>Usage analytics or behavioral tracking data</li>
+              <li>Cookies or browser fingerprinting data</li>
             </ul>
           </section>
 
           {/* Section 3 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              3. How We Use Data
+              3. Data Processing and Usage
             </h2>
 
             <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-semibold mb-3">
-              3.1 Tweet Content Processing
+              3.1 Automatic Tweet Content Processing
             </h3>
             <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-3">
-              When you browse Twitter/X, Musashi:
+              When you browse Twitter/X with the Extension enabled, the following automated processing occurs:
             </p>
             <ol className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-decimal mb-6">
-              <li><strong>Reads tweet text</strong> to automatically detect mentions of prediction markets</li>
-              <li><strong>Displays matching markets</strong> from Polymarket and Kalshi directly on tweets</li>
-              <li><strong>Does NOT send tweet content anywhere</strong> unless you explicitly click to analyze sentiment</li>
+              <li>Tweet text is analyzed locally within your browser to detect mentions of prediction markets</li>
+              <li>Matching markets from Polymarket and Kalshi are displayed inline within the Twitter interface</li>
+              <li>No tweet content is transmitted to external services during this automatic processing</li>
             </ol>
 
             <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-semibold mb-3">
-              3.2 AI Sentiment Analysis (Optional)
+              3.2 Optional AI Sentiment Analysis
             </h3>
             <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-3">
-              When you <strong>explicitly request</strong> sentiment analysis:
+              When you explicitly request sentiment analysis by activating the analysis feature:
             </p>
             <ol className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-decimal mb-6">
-              <li>Tweet/text is sent to <strong>DeepSeek API</strong> for AI analysis</li>
-              <li>DeepSeek returns sentiment analysis with confidence scores</li>
-              <li>Results are displayed and cached locally</li>
-              <li>We do NOT store your requests (we don&apos;t have servers!)</li>
+              <li>The selected tweet text or content is transmitted to the DeepSeek API for processing</li>
+              <li>DeepSeek returns sentiment analysis including directional bias (bullish/bearish/neutral) and confidence metrics</li>
+              <li>Analysis results are displayed to you and cached locally for performance optimization</li>
+              <li>We do not maintain server infrastructure to store analysis requests or results</li>
             </ol>
 
             <div className="bg-[var(--bg-secondary)] border border-[var(--text-primary)] border-l-4 p-6 mb-6">
               <h3 className="font-jetbrains text-[var(--text-primary)] text-base font-bold mb-3">
-                Important: DeepSeek AI Processing
+                Third-Party AI Processing Notice
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8]">
-                When you request sentiment analysis, tweet content is sent to DeepSeek&apos;s API. DeepSeek&apos;s privacy policy applies to this data processing. DeepSeek may use this data to improve their AI models.
+                When you request sentiment analysis, tweet content is transmitted to DeepSeek&apos;s application programming interface. DeepSeek&apos;s privacy policy governs the processing of this data. DeepSeek may utilize transmitted content to improve their artificial intelligence models. We recommend reviewing DeepSeek&apos;s privacy policy at their official website for complete information regarding their data practices.
               </p>
             </div>
+
+            <h3 className="font-jetbrains text-[var(--text-primary)] text-lg font-semibold mb-3">
+              3.3 Local Data Storage
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-3">
+              The Extension stores the following data exclusively within your local browser storage:
+            </p>
+            <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc mb-4">
+              <li>Market cache containing current prediction market data (refreshed every 30-60 seconds)</li>
+              <li>Recent sentiment analysis results cache (retained for 24 hours for performance purposes)</li>
+              <li>User preferences and extension configuration settings</li>
+            </ul>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8]">
+              This locally stored data is never transmitted to our servers, as we do not maintain server infrastructure. All data can be removed by uninstalling the Extension or clearing your browser&apos;s extension data.
+            </p>
           </section>
 
           {/* Section 4 */}
@@ -155,14 +173,19 @@ export default function PrivacyPolicy() {
               4. Third-Party Services
             </h2>
 
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-6">
+              The Extension integrates with the following third-party services:
+            </p>
+
             <div className="space-y-4">
               <div>
                 <h3 className="font-jetbrains text-[var(--text-primary)] text-base font-semibold mb-2">
                   4.1 DeepSeek AI
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  <strong>Purpose:</strong> Sentiment analysis<br />
-                  <strong>Data shared:</strong> Tweet text (only when you request analysis)
+                  <strong>Purpose:</strong> Sentiment analysis of tweet content and news articles<br />
+                  <strong>Data Transmitted:</strong> Tweet text or user-selected text (only upon explicit user request)<br />
+                  <strong>Privacy Policy:</strong> Available at DeepSeek&apos;s official website
                 </p>
               </div>
 
@@ -171,8 +194,9 @@ export default function PrivacyPolicy() {
                   4.2 Polymarket API
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  <strong>Purpose:</strong> Fetch prediction market data<br />
-                  <strong>Data shared:</strong> None - we only fetch public market data
+                  <strong>Purpose:</strong> Retrieval of prediction market data including titles, odds, and URLs<br />
+                  <strong>Data Transmitted:</strong> None (we retrieve publicly available market data only)<br />
+                  <strong>Privacy Policy:</strong> Available at polymarket.com/privacy
                 </p>
               </div>
 
@@ -181,8 +205,9 @@ export default function PrivacyPolicy() {
                   4.3 Kalshi API
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  <strong>Purpose:</strong> Fetch regulated prediction market data<br />
-                  <strong>Data shared:</strong> None - we only fetch public market data
+                  <strong>Purpose:</strong> Retrieval of regulated prediction market data<br />
+                  <strong>Data Transmitted:</strong> None (we retrieve publicly available market data only)<br />
+                  <strong>Privacy Policy:</strong> Available at kalshi.com/privacy
                 </p>
               </div>
             </div>
@@ -191,96 +216,180 @@ export default function PrivacyPolicy() {
           {/* Section 5 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              5. Data Sharing
+              5. Data Sharing and Disclosure
             </h2>
 
             <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-6">
-              <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-3">
-                <strong>We do NOT sell, rent, or share your data with third parties for marketing purposes.</strong>
+              <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+                We do not sell, rent, trade, or otherwise transfer your data to third parties for marketing or commercial purposes.
               </p>
-              <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8]">
-                The only data sharing: Tweet content sent to DeepSeek API <strong>only when you explicitly request analysis</strong>.
+              <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+                The only data sharing that occurs is:
               </p>
+              <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
+                <li>Transmission of tweet content to DeepSeek AI exclusively when you explicitly request sentiment analysis</li>
+                <li>Standard API requests to Polymarket and Kalshi to retrieve publicly available market data (no personal information is involved in these requests)</li>
+              </ul>
             </div>
           </section>
 
           {/* Section 6 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              6. Your Rights
+              6. API Access for AI Agents
             </h2>
 
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+              The Extension provides an application programming interface for AI trading agents to access sentiment analysis functionality. When an AI agent utilizes this API:
+            </p>
             <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
-              <li><strong>Access your data:</strong> All data is stored locally - inspect using Chrome DevTools</li>
-              <li><strong>Delete your data:</strong> Uninstall the extension or clear browser storage</li>
-              <li><strong>Opt-out of AI analysis:</strong> Don&apos;t click &quot;Analyze&quot; - it&apos;s entirely optional</li>
-              <li><strong>Control data sharing:</strong> You decide when to request sentiment analysis</li>
+              <li>The AI agent operates on your local machine and queries your installed Extension instance</li>
+              <li>No data is transmitted to our infrastructure (we do not maintain servers)</li>
+              <li>The same privacy practices described in this policy apply to AI agent access</li>
+              <li>You retain full control over what your AI agent does with data received from the Extension</li>
             </ul>
           </section>
 
           {/* Section 7 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              7. Security
+              7. Data Retention
             </h2>
 
             <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
-              <li>All API requests use HTTPS encryption</li>
-              <li>No server-side storage (can&apos;t be hacked if we don&apos;t store it!)</li>
-              <li>All processing happens locally in your browser</li>
-              <li>Extension code is open for security audits</li>
+              <li><strong>Market data cache:</strong> Automatically refreshed every 30-60 seconds; outdated data is automatically purged</li>
+              <li><strong>Sentiment analysis cache:</strong> Retained for 24 hours, then automatically deleted</li>
+              <li><strong>User preferences:</strong> Retained until you uninstall the Extension or manually clear browser extension data</li>
             </ul>
           </section>
 
           {/* Section 8 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              8. Contact Us
+              8. User Rights and Data Control
             </h2>
 
-            <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] border-l-4 border-l-[var(--text-primary)] p-6">
-              <p className="font-jetbrains text-[var(--text-secondary)] text-sm mb-3">
-                Questions about this Privacy Policy or Musashi&apos;s data practices:
-              </p>
-              <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                <strong>Email:</strong> support@musashi.bot<br />
-                <strong>Website:</strong> <a href="https://musashi.bot" className="text-[var(--text-primary)] underline">https://musashi.bot</a><br />
-                <strong>Response time:</strong> We aim to respond within 48 hours
-              </p>
-            </div>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+              You have the following rights regarding your data:
+            </p>
+            <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
+              <li><strong>Right to Access:</strong> All data is stored locally in your browser and can be inspected using Chrome Developer Tools</li>
+              <li><strong>Right to Deletion:</strong> Uninstall the Extension or clear browser storage data to remove all locally stored information</li>
+              <li><strong>Right to Opt-Out:</strong> AI sentiment analysis is entirely optional; simply refrain from activating the analysis feature</li>
+              <li><strong>Right to Control Data Sharing:</strong> You determine when data is transmitted to third parties by choosing when to request sentiment analysis</li>
+            </ul>
           </section>
 
           {/* Section 9 */}
           <section className="mb-12">
             <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
-              9. Legal Compliance
+              9. Children&apos;s Privacy
+            </h2>
+
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8]">
+              The Extension is not intended for use by individuals under the age of 13. We do not knowingly collect information from children under 13. If you are a parent or guardian and believe your child has used the Extension, please contact us at the address provided in Section 12.
+            </p>
+          </section>
+
+          {/* Section 10 */}
+          <section className="mb-12">
+            <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
+              10. Security Measures
+            </h2>
+
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+              We implement the following security measures to protect data:
+            </p>
+            <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
+              <li>All API communications utilize HTTPS encryption</li>
+              <li>No server-side data storage eliminates risks associated with centralized data breaches</li>
+              <li>All data processing occurs locally within your browser environment</li>
+              <li>Extension source code is available for security auditing</li>
+            </ul>
+          </section>
+
+          {/* Section 11 */}
+          <section className="mb-12">
+            <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
+              11. Changes to This Privacy Policy
+            </h2>
+
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+              We may update this Privacy Policy periodically. When changes are made:
+            </p>
+            <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
+              <li>The &quot;Effective Date&quot; at the beginning of this policy will be updated</li>
+              <li>Significant changes will be communicated to users via the Extension interface</li>
+              <li>Continued use of the Extension after changes constitute acceptance of the revised policy</li>
+            </ul>
+          </section>
+
+          {/* Section 12 */}
+          <section className="mb-12">
+            <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
+              12. International Data Transfers
+            </h2>
+
+            <p className="font-jetbrains text-[var(--text-secondary)] text-sm leading-[1.8] mb-4">
+              The Extension may be used globally. Please note:
+            </p>
+            <ul className="font-jetbrains text-[var(--text-secondary)] text-sm space-y-2 pl-5 list-disc">
+              <li>DeepSeek AI may process data in various jurisdictions</li>
+              <li>The Extension itself does not collect or store personal data</li>
+              <li>For European Economic Area users: We act as a data processor only when you request sentiment analysis</li>
+              <li>For California residents: We do not sell personal information as defined under the California Consumer Privacy Act</li>
+            </ul>
+          </section>
+
+          {/* Section 13 */}
+          <section className="mb-12">
+            <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
+              13. Contact Information
+            </h2>
+
+            <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] border-l-4 border-l-[var(--text-primary)] p-6">
+              <p className="font-jetbrains text-[var(--text-secondary)] text-sm mb-4">
+                For questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+              </p>
+              <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
+                <strong>Email:</strong> support@musashi.bot<br />
+                <strong>Website:</strong> <a href="https://musashi.bot" className="text-[var(--text-primary)] underline">https://musashi.bot</a><br />
+                <strong>Response Time:</strong> We aim to respond to all inquiries within 48 hours
+              </p>
+            </div>
+          </section>
+
+          {/* Section 14 */}
+          <section className="mb-12">
+            <h2 className="font-jetbrains text-[var(--text-primary)] text-[28px] font-bold uppercase tracking-[2px] mb-5">
+              14. Regulatory Compliance
             </h2>
 
             <div className="bg-[var(--bg-secondary)] border border-[var(--border-primary)] p-6 space-y-4">
               <div>
                 <h3 className="font-jetbrains text-[var(--text-primary)] text-base font-semibold mb-2">
-                  GDPR Compliance (European Users)
+                  General Data Protection Regulation (GDPR)
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  We are a &quot;data processor&quot; only when you request sentiment analysis. Since we don&apos;t collect or store personal data ourselves, most GDPR obligations don&apos;t apply to Musashi directly.
+                  For users in the European Economic Area: When you request sentiment analysis, we act as a data processor transmitting your data to DeepSeek (the data controller). As we do not collect or store personal data ourselves, most GDPR data subject rights requests would be directed to DeepSeek rather than to us.
                 </p>
               </div>
 
               <div>
                 <h3 className="font-jetbrains text-[var(--text-primary)] text-base font-semibold mb-2">
-                  CCPA Compliance (California Users)
+                  California Consumer Privacy Act (CCPA)
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  We do NOT sell your personal information. We do NOT share personal information for cross-context behavioral advertising.
+                  For California residents: We do not sell your personal information. We do not share personal information for cross-context behavioral advertising. As we do not collect personal information, CCPA data subject rights are generally not applicable to our Extension.
                 </p>
               </div>
 
               <div>
                 <h3 className="font-jetbrains text-[var(--text-primary)] text-base font-semibold mb-2">
-                  Chrome Web Store Requirements
+                  Chrome Web Store Compliance
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-sm">
-                  This privacy policy complies with Chrome Web Store&apos;s Program Policies and User Data FAQ.
+                  This Privacy Policy complies with the Chrome Web Store Program Policies and User Data FAQ requirements.
                 </p>
               </div>
             </div>
