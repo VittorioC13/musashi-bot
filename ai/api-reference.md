@@ -630,7 +630,7 @@ function sendMessage<T = any>(
 
 ## Changelog
 
-### v1.0.0 (2025-02-25)
+### v1.0.0 (2026-02-25)
 - Initial API release
 - 4 core endpoints
 - DeepSeek AI integration
