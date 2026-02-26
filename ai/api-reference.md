@@ -635,3 +635,4 @@ function sendMessage<T = any>(
 - 4 core endpoints
 - DeepSeek AI integration
 - 500+ markets (Polymarket + Kalshi)
+- Updated documentation timestamps
