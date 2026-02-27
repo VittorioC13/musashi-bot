@@ -296,10 +296,10 @@ export default function Home() {
       {/* Platforms Section */}
       <section className="flex flex-col items-center gap-12 w-full px-[120px] py-[80px] bg-[var(--bg-secondary)] border border-[var(--border-primary)]">
         <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-          650+ Markets Across Two Platforms
+          The Bridge Between Social & Markets
         </h2>
         <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] text-center w-[600px]">
-          Musashi aggregates prediction markets from the two largest platforms in real time.
+          Real-time data from the two largest prediction market platforms, matched against Twitter conversations. Structured for humans and agents alike.
         </p>
 
         <div className="flex items-center justify-center gap-10 w-full">
@@ -344,7 +344,8 @@ export default function Home() {
           Stop Missing Mispriced Markets
         </h2>
         <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7] text-center w-[640px]">
-          Every tweet you scroll past could be hiding a trading opportunity. Musashi makes sure you never miss one.
+          Turn social signals into market intelligence. Built for today&apos;s traders,<br />
+          ready for tomorrow&apos;s AI agents.
         </p>
 
         <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
@@ -355,13 +356,20 @@ export default function Home() {
           Chrome Extension • No account needed • Works instantly
         </span>
 
+        <div className="flex flex-col items-center gap-2 pt-8 border-t border-[var(--border-lightest)] w-full max-w-[800px]">
+          <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal text-center leading-relaxed">
+            Infrastructure for intelligent market discovery. Structured data, real-time feeds, and<br />
+            contextual signals—ready for AI agents to surface opportunities their users care about.
+          </span>
+        </div>
+
         <div className="flex items-center justify-center gap-20 w-full pt-12">
           <div className="flex flex-col items-center gap-2">
             <span className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-              &lt;200ms
+              Real-time
             </span>
             <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              DETECTION LATENCY
+              AGENT-READY DATA
             </span>
           </div>
 
@@ -370,16 +378,16 @@ export default function Home() {
               650+
             </span>
             <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              LIVE MARKETS
+              MARKETS INDEXED
             </span>
           </div>
 
           <div className="flex flex-col items-center gap-2">
             <span className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-              30s
+              Twitter
             </span>
             <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              PRICE REFRESH RATE
+              NATIVE INTEGRATION
             </span>
           </div>
         </div>
