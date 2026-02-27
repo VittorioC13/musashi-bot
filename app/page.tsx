@@ -29,20 +29,20 @@ export default function Home() {
           {/* Badge */}
           <div className="flex items-center">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              // THE STRATEGIST&apos;S EDGE
+              // MUSASHI_FEED ACTIVE — BTC DOM: 54.2% — FEAR INDEX: 73 [GREED]
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="font-jetbrains text-[var(--text-primary)] text-[52px] font-normal leading-[1.15] tracking-[-2px]">
-            Read the Signal.<br />Strike First.
+            Trade the <br />[Tweets]
           </h1>
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Like Musashi mastered timing, you&apos;ll master markets.<br />
-            See prediction market opportunities the moment they<br />
-            surface on Twitter—before everyone else.
+            Real-time intelligence, on chain signals, and<br />
+            predictive analytics. Engineered for those who move<br />
+            before the market.
           </p>
 
           {/* CTA Buttons */}
@@ -51,7 +51,7 @@ export default function Home() {
               <span className="font-jetbrains text-[var(--text-primary)] text-xs font-bold">Take a look</span>
             </SmoothScrollLink>
             <button className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
-              <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Build-in &gt;&gt;&gt;</span>
+              <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Install</span>
             </button>
           </div>
         </div>
