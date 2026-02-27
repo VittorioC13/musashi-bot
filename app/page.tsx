@@ -29,7 +29,7 @@ export default function Home() {
           {/* Badge */}
           <div className="flex items-center">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              // MUSASHI_FEED ACTIVE — BTC DOM: 54.2% — FEAR INDEX: 73 [GREED]
+              // CHROME EXTENSION • FREE • 650+ MARKETS
             </span>
           </div>
 
