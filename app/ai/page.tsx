@@ -82,6 +82,12 @@ export default async function DocsPage(props: PageProps) {
             DOCS
           </Link>
           <Link
+            href="/pricing"
+            className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+          >
+            PRICING
+          </Link>
+          <Link
             href="/privacy"
             className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
           >
