@@ -29,20 +29,20 @@ export default function Home() {
           {/* Badge */}
           <div className="flex items-center">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              // MUSASHI_FEED ACTIVE — BTC DOM: 54.2% — FEAR INDEX: 73 [GREED]
+              // THE STRATEGIST&apos;S EDGE
             </span>
           </div>
 
           {/* Headline */}
           <h1 className="font-jetbrains text-[var(--text-primary)] text-[52px] font-normal leading-[1.15] tracking-[-2px]">
-            Trade the <br />[Tweets]
+            Read the Signal.<br />Strike First.
           </h1>
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Real-time intelligence, on chain signals, and<br />
-            predictive analytics. Engineered for those who move<br />
-            before the market.
+            Like Musashi mastered timing, you&apos;ll master markets.<br />
+            See prediction market opportunities the moment they<br />
+            surface on Twitter—before everyone else.
           </p>
 
           {/* CTA Buttons */}
@@ -56,7 +56,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Hero Figure - Musashi Image */}
+        {/* Hero Figure - Musashi Image with Market Data Overlays */}
         <div className="absolute right-0 top-0 w-[860px] h-[860px] pointer-events-none">
           <div className="relative w-full h-full bg-black">
             <Image
@@ -67,15 +67,96 @@ export default function Home() {
               priority
               unoptimized
             />
+
+            {/* Floating Market Data Cards - Creating the "Strategic Intelligence" feel */}
+
+            {/* Top Left - Market Card */}
+            <div className="absolute top-[120px] left-[60px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
+              <div className="flex flex-col gap-1">
+                <span className="font-jetbrains text-[#666] text-[9px] font-medium">POLYMARKET</span>
+                <span className="font-jetbrains text-white text-[11px] font-semibold leading-tight">Trump wins 2024?</span>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-1">
+                    <span className="font-jetbrains text-[#00FF88] text-sm font-bold">YES</span>
+                    <span className="font-jetbrains text-white text-sm font-bold">89%</span>
+                  </div>
+                  <span className="font-jetbrains text-[#00FF88] text-[10px]">+12%</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Top Right - Probability Indicator */}
+            <div className="absolute top-[80px] right-[140px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FF4444]/30 backdrop-blur-md">
+              <div className="flex items-center gap-2">
+                <svg className="w-3 h-3 fill-[#FF4444]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+                <span className="font-jetbrains text-[#FF4444] text-lg font-bold">-23%</span>
+              </div>
+            </div>
+
+            {/* Middle Left - Volume Metric */}
+            <div className="absolute top-[320px] left-[40px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
+              <div className="flex flex-col gap-1">
+                <span className="font-jetbrains text-[#666] text-[9px]">24H VOL</span>
+                <span className="font-jetbrains text-white text-sm font-bold">$2.4M</span>
+              </div>
+            </div>
+
+            {/* Middle Right - Market Card */}
+            <div className="absolute top-[280px] right-[80px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md max-w-[200px]">
+              <div className="flex flex-col gap-1">
+                <span className="font-jetbrains text-[#666] text-[9px] font-medium">KALSHI</span>
+                <span className="font-jetbrains text-white text-[11px] font-semibold leading-tight">BTC above $100k?</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-jetbrains text-[#00FF88] text-sm font-bold">67%</span>
+                  <div className="flex-1 h-1 bg-[#222] rounded-full overflow-hidden">
+                    <div className="h-full w-[67%] bg-[#00FF88]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Left - Quick Stat */}
+            <div className="absolute bottom-[180px] left-[90px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
+              <span className="font-jetbrains text-white text-xs font-bold">650+ MARKETS</span>
+            </div>
+
+            {/* Bottom Right - Market Trend */}
+            <div className="absolute bottom-[140px] right-[120px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#00FF88]/30 backdrop-blur-md">
+              <div className="flex items-center gap-2">
+                <svg className="w-4 h-4 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+                </svg>
+                <span className="font-jetbrains text-[#00FF88] text-xs font-bold">TRENDING</span>
+              </div>
+            </div>
+
+            {/* Far Right - Simple odds */}
+            <div className="absolute top-[480px] right-[50px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
+              <div className="flex flex-col items-end gap-1">
+                <span className="font-jetbrains text-[#00FF88] text-xs">YES 34¢</span>
+                <span className="font-jetbrains text-[#FF4444] text-xs">NO 66¢</span>
+              </div>
+            </div>
+
+            {/* Connecting lines - subtle data network effect */}
+            <svg className="absolute inset-0 w-full h-full opacity-20" style={{ mixBlendMode: 'screen' }}>
+              <line x1="180" y1="150" x2="320" y2="280" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
+              <line x1="140" y1="340" x2="280" y2="420" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
+              <line x1="720" y1="110" x2="640" y2="310" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
+            </svg>
           </div>
         </div>
 
-        {/* Status Bar */}
-        <div className="absolute bottom-0 left-0 w-full px-[80px] py-2 border-t border-[var(--border-lightest)] flex justify-between z-10">
-          <span className="font-jetbrains text-[10px] font-medium text-[#FFFFFF30]">ALL SYSTEMS NOMINAL</span>
-          <span className="font-jetbrains text-[10px] font-medium text-[#FFFFFF20]">FEED LATENCY 12ms</span>
-          <span className="font-jetbrains text-[10px] font-medium text-[#FFFFFF20]">MUSASHI PROTOCOL v2.4.1</span>
-          <span className="font-jetbrains text-[10px] font-medium text-[#FFFFFF20]">UTC 02:47:33</span>
+        {/* Trust Indicators - Real Data */}
+        <div className="absolute bottom-0 left-0 w-full px-[80px] py-3 border-t border-[var(--border-lightest)] flex justify-between items-center z-10">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-[#00FF88] rounded-full animate-pulse" />
+            <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">650+ Markets Live</span>
+          </div>
+          <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">Polymarket • Kalshi</span>
+          <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">Chrome Extension • Free</span>
         </div>
       </section>
 
