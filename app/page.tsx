@@ -29,7 +29,7 @@ export default function Home() {
           {/* Badge */}
           <div className="flex items-center">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              // CHROME EXTENSION • FREE • 650+ MARKETS
+              CHROME EXTENSION • FREE • 650+ MARKETS
             </span>
           </div>
 
@@ -253,56 +253,41 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Feature Cards - Row 1 */}
-        <div className="flex gap-6 w-full">
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+        {/* Feature Cards - Single Row */}
+        <div className="grid grid-cols-3 gap-6 w-full">
+          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
             </svg>
             <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              LIVE PRICE UPDATES
+              Never Miss an Edge
             </h3>
             <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Yes/No odds refresh every 30 seconds with flash animations on price movement. See exactly where the market is moving.
+              Markets update in real-time as you scroll. When odds shift, you'll see it instantly—no refresh needed.
             </p>
           </div>
 
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
             </svg>
             <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              SMART MATCHING
+              Zero Noise
             </h3>
             <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              500+ synonym expansions, n-gram analysis, and confidence scoring ensure you only see the most relevant markets for each tweet.
-            </p>
-          </div>
-        </div>
-
-        {/* Feature Cards - Row 2 */}
-        <div className="flex gap-6 w-full">
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-            </svg>
-            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              DARK MODE NATIVE
-            </h3>
-            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Automatically detects Twitter&apos;s theme and adapts. Cards blend seamlessly into your feed whether you use light or dark mode.
+              Only see markets that actually match the tweet. No false positives, no spam—just relevant opportunities.
             </p>
           </div>
 
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M23 6l-9.5 9.5-5-5L1 18l1.5 1.5 6-6.01 5 5L22 8.5z"/>
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
             </svg>
             <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              SENTIMENT DETECTION
+              One-Click Trading
             </h3>
             <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Each card shows bullish or bearish sentiment based on the tweet&apos;s language. Understand market direction at a glance with color-coded indicators.
+              Click any market card to jump straight to Polymarket or Kalshi. From signal to trade in seconds.
             </p>
           </div>
         </div>
@@ -408,7 +393,7 @@ export default function Home() {
               MUSASHI
             </span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              // YOUR EDGE ON PREDICTION MARKETS
+              YOUR EDGE ON PREDICTION MARKETS
             </span>
           </div>
 
