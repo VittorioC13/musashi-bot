@@ -40,9 +40,9 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Real-time intelligence, on chain signals, and<br />
-            predictive analytics. Engineered for those who move<br />
-            before the market.
+            Like Musashi mastered timing, you&apos;ll master markets.<br />
+            See prediction market opportunities the moment they<br />
+            surface on Twitter—before everyone else.
           </p>
 
           {/* CTA Buttons */}
