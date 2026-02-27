@@ -163,9 +163,6 @@ export default function Home() {
       {/* Before/After Slider Section */}
       <section id="see-the-difference" className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
         <div className="flex flex-col items-center gap-4">
-          <span className="font-jetbrains text-[var(--text-lighter)] text-[11px] font-bold tracking-[2px]">
-            // SEE THE DIFFERENCE
-          </span>
           <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
             Musashi Fills the Gap between Talks and Trades
           </h2>
@@ -188,9 +185,6 @@ export default function Home() {
         {/* How It Works - Integrated Steps */}
         <div className="flex flex-col items-center gap-8 w-full max-w-[1100px] pt-12">
           <div className="flex flex-col items-center gap-4">
-            <span className="font-jetbrains text-[var(--text-lighter)] text-[11px] font-bold tracking-[2px]">
-              // HOW IT WORKS
-            </span>
             <h3 className="font-grotesk text-[var(--text-primary)] text-[32px] font-bold tracking-[-1px] text-center">
               From Tweet to Trade in Seconds
             </h3>
@@ -251,9 +245,6 @@ export default function Home() {
       {/* Features Section */}
       <section className="flex flex-col items-center gap-16 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
         <div className="flex flex-col items-center gap-4 w-full">
-          <span className="font-jetbrains text-[var(--text-lighter)] text-[11px] font-bold tracking-[2px]">
-            // BUILT FOR TRADERS
-          </span>
           <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
             Everything Happens Inline
           </h2>
@@ -329,14 +320,14 @@ export default function Home() {
         <div className="flex items-center justify-center gap-10 w-full">
           <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Polymarket</span>
-            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">[500+ MARKETS]</span>
-            <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">// LIVE PRICE POLLING EVERY 30S</span>
+            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">500+ Markets</span>
+            <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">Live price updates every 30s</span>
           </div>
 
           <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Kalshi</span>
-            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">[150+ MARKETS]</span>
-            <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">// CFTC-REGULATED EXCHANGE</span>
+            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">150+ Markets</span>
+            <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">CFTC-regulated exchange</span>
           </div>
         </div>
 
