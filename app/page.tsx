@@ -182,113 +182,56 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* How It Works - Integrated Steps */}
-        <div className="flex flex-col items-center gap-8 w-full max-w-[1100px] pt-12">
+        {/* Agent-Focused Combined Section */}
+        <div className="flex flex-col items-center gap-12 w-full max-w-[1100px] pt-12">
           <div className="flex flex-col items-center gap-4">
-            <h3 className="font-grotesk text-[var(--text-primary)] text-[32px] font-bold tracking-[-1px] text-center">
-              From Tweet to Trade in Seconds
+            <h3 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
+              Infrastructure for Intelligent Agents
             </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7] text-center w-[700px]">
+              AI agents need context to surface opportunities their users care about. Musashi provides the bridge between social signals and prediction markets.
+            </p>
           </div>
 
           <div className="grid grid-cols-3 gap-6 w-full">
-            {/* Step 1 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-              <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
-                <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">1</span>
-              </div>
+            {/* Feature 1 */}
+            <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
               <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 3h8v8H3V3zm0 10h8v8H3v-8zM13 3h8v8h-8V3zm0 10h8v8h-8v-8z"/>
+                <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
               </svg>
-              <h4 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                SCROLL TWITTER
-              </h4>
-              <p className="font-jetbrains text-[var(--text-secondary)] text-xs font-normal leading-[1.7]">
-                Browse your feed as usual. Musashi scans every tweet for prediction market relevance.
+              <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+                Real-time Market Data
+              </h3>
+              <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+                650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
               </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-              <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
-                <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">2</span>
-              </div>
+            {/* Feature 2 */}
+            <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
               <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 11h2v5h-2v-5zm4-7h2v12h-2V9zm4 3h2v9h-2v-9z"/>
+                <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
               </svg>
-              <h4 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                SEE LIVE ODDS
-              </h4>
-              <p className="font-jetbrains text-[var(--text-secondary)] text-xs font-normal leading-[1.7]">
-                Market cards appear inline showing live Yes/No prices, 24h change, and volume.
+              <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+                Context-Aware Matching
+              </h3>
+              <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+                Intelligent matching between social conversations and markets. No noise—only relevant opportunities surface.
               </p>
             </div>
 
-            {/* Step 3 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-              <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
-                <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">3</span>
-              </div>
+            {/* Feature 3 */}
+            <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
               <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
               </svg>
-              <h4 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                TRADE INSTANTLY
-              </h4>
-              <p className="font-jetbrains text-[var(--text-secondary)] text-xs font-normal leading-[1.7]">
-                Click any market card to jump to Polymarket or Kalshi. One click from discovery to execution.
+              <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+                API-First Design
+              </h3>
+              <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+                Built for programmatic access. Agents can query, filter, and act on market data seamlessly.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="flex flex-col items-center gap-16 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
-        <div className="flex flex-col items-center gap-4 w-full">
-          <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-            Everything Happens Inline
-          </h2>
-          <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] text-center w-[660px]">
-            No popups, no sidebars, no context switching. Market data appears right where you need it — inside Twitter.
-          </p>
-        </div>
-
-        {/* Feature Cards - Single Row */}
-        <div className="grid grid-cols-3 gap-6 w-full">
-          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
-            </svg>
-            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              Never Miss an Edge
-            </h3>
-            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Markets update in real-time as you scroll. When odds shift, you'll see it instantly—no refresh needed.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
-            </svg>
-            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              Zero Noise
-            </h3>
-            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Only see markets that actually match the tweet. No false positives, no spam—just relevant opportunities.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
-            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
-            </svg>
-            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-              One-Click Trading
-            </h3>
-            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-              Click any market card to jump straight to Polymarket or Kalshi. From signal to trade in seconds.
-            </p>
           </div>
         </div>
       </section>
@@ -342,58 +285,14 @@ export default function Home() {
       <FAQ />
 
       {/* Final CTA Section */}
-      <section className="flex flex-col items-center gap-8 w-full px-[120px] py-[100px] bg-[var(--bg-primary)] border border-[var(--border-primary)]">
-        <h2 className="font-grotesk text-[var(--text-primary)] text-[48px] font-bold tracking-[-1px] text-center">
-          Stop Missing Mispriced Markets
+      <section className="flex flex-col items-center justify-center gap-10 w-full px-[120px] py-[120px] bg-[var(--bg-primary)] border border-[var(--border-primary)] min-h-[500px]">
+        <h2 className="font-grotesk text-[var(--text-primary)] text-[72px] font-bold tracking-[-2px] text-center leading-[1.1]">
+          Built. For. Agents.
         </h2>
-        <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7] text-center w-[640px]">
-          Turn social signals into market intelligence. Built for today&apos;s traders,<br />
-          ready for tomorrow&apos;s AI agents.
-        </p>
 
         <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
           <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">INSTALL ON CHROME — FREE</span>
         </button>
-
-        <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-medium text-center">
-          Chrome Extension • No account needed • Works instantly
-        </span>
-
-        <div className="flex flex-col items-center gap-2 pt-8 border-t border-[var(--border-lightest)] w-full max-w-[800px]">
-          <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal text-center leading-relaxed">
-            Infrastructure for intelligent market discovery. Structured data, real-time feeds, and<br />
-            contextual signals—ready for AI agents to surface opportunities their users care about.
-          </span>
-        </div>
-
-        <div className="flex items-center justify-center gap-20 w-full pt-12">
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-              Real-time
-            </span>
-            <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              AGENT-READY DATA
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-              650+
-            </span>
-            <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              MARKETS INDEXED
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-              Twitter
-            </span>
-            <span className="font-jetbrains text-[var(--text-secondary)] text-[11px] font-medium text-center">
-              NATIVE INTEGRATION
-            </span>
-          </div>
-        </div>
       </section>
 
       {/* Footer */}
