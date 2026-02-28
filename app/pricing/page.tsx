@@ -56,29 +56,51 @@ export default function Pricing() {
       </main>
 
       {/* Footer */}
-      <footer className="flex flex-col gap-8 w-full px-[120px] py-12 bg-[var(--bg-secondary)] border-t border-[var(--border-primary)]">
-        <div className="flex items-center justify-between w-full">
-          <div className="flex items-center gap-3">
+      <footer className="flex flex-col gap-6 w-full px-[120px] py-12 bg-[var(--bg-secondary)] border-t border-[var(--border-primary)]">
+        <div className="flex items-start justify-between w-full">
+          <div className="flex flex-col gap-3">
             <span className="font-jetbrains text-[var(--text-primary)] text-base font-semibold tracking-[1px]">
               MUSASHI
             </span>
-            <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              YOUR EDGE ON PREDICTION MARKETS
+            <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal max-w-[400px] leading-relaxed">
+              Turn social signals into market intelligence. Agent-ready infrastructure for prediction markets.
             </span>
           </div>
 
-          <nav className="flex gap-8">
-            <a href="#" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">TWITTER</a>
-            <a href="#" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">GITHUB</a>
-            <a href="#" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">CHROME WEB STORE</a>
-          </nav>
+          <div className="flex gap-16">
+            <div className="flex flex-col gap-3">
+              <span className="font-jetbrains text-[var(--text-muted)] text-[10px] font-bold tracking-[1.5px] uppercase">
+                Product
+              </span>
+              <nav className="flex flex-col gap-2">
+                <a href="/ai" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">API Docs</a>
+                <a href="/pricing" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">Pricing</a>
+                <a href="/privacy" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">Privacy</a>
+              </nav>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <span className="font-jetbrains text-[var(--text-muted)] text-[10px] font-bold tracking-[1.5px] uppercase">
+                Community
+              </span>
+              <nav className="flex flex-col gap-2">
+                <a href="https://twitter.com/musashimarket" target="_blank" rel="noopener noreferrer" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">Twitter</a>
+                <a href="https://github.com/VittorioC13/musashi-bot" target="_blank" rel="noopener noreferrer" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">GitHub</a>
+              </nav>
+            </div>
+          </div>
         </div>
 
         <div className="w-full h-[1px] bg-[var(--border-primary)]" />
 
-        <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">
-          © 2026 MUSASHI. ALL RIGHTS RESERVED.
-        </span>
+        <div className="flex items-center justify-between w-full">
+          <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">
+            © {new Date().getFullYear()} Musashi
+          </span>
+          <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">
+            Built for agents. Powered by prediction markets.
+          </span>
+        </div>
       </footer>
     </div>
   );
