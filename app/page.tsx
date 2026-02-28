@@ -337,6 +337,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-secondary)] border-t border-[var(--border-primary)]">
+        <div className="flex flex-col items-center gap-4 w-full">
+          <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-[1100px]">
+          {/* Question 1 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Is Musashi built for humans or AI agents?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Both. Today, it&apos;s a Chrome extension that humans use to discover markets on Twitter. Tomorrow, it&apos;s the infrastructure layer for AI agents to turn social signals into trading opportunities for their users. We&apos;re building the bridge.
+            </p>
+          </div>
+
+          {/* Question 2 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Is Musashi free?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Yes, completely free right now. No account required, no credit card, no tracking. In the future, we may introduce paid features for power users and agents, but the core extension will remain free.
+            </p>
+          </div>
+
+          {/* Question 3 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              How do I use Musashi?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Install the Chrome extension and browse Twitter as usual. When you see tweets about events with active prediction markets, Musashi will show you live odds, prices, and volume—right inline with the tweet. Click any market card to trade.
+            </p>
+          </div>
+
+          {/* Question 4 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              What markets does Musashi cover?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              650+ active markets from Polymarket and Kalshi. Politics, crypto, economics, sports, tech, climate, and more. Markets update in real-time and we add new ones daily.
+            </p>
+          </div>
+
+          {/* Question 5 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Does Musashi work on mobile?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Not yet. Musashi is a Chrome extension, so it only works on desktop browsers. Mobile support is on the roadmap, but we&apos;re focused on getting the desktop experience perfect first.
+            </p>
+          </div>
+
+          {/* Question 6 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Can I build on top of Musashi?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Absolutely. We have a public API that lets you analyze text and get matching markets. Perfect for AI agents, trading bots, or custom integrations. Check our <a href="/ai" className="text-[var(--text-primary)] underline">API docs</a> to get started.
+            </p>
+          </div>
+
+          {/* Question 7 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Is my data private?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Yes. We don&apos;t collect or store personal data. No tracking, no analytics, no accounts. All processing happens locally in your browser. Read our full <a href="/privacy" className="text-[var(--text-primary)] underline">privacy policy</a>.
+            </p>
+          </div>
+
+          {/* Question 8 */}
+          <div className="flex flex-col gap-3 p-6 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Do I need accounts on Polymarket or Kalshi?
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7]">
+              Only if you want to trade. Musashi shows you the markets and prices, but when you click to trade, you&apos;ll be redirected to Polymarket or Kalshi where you&apos;ll need an account to place bets.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="flex flex-col items-center gap-8 w-full px-[120px] py-[100px] bg-[var(--bg-primary)] border border-[var(--border-primary)]">
         <h2 className="font-grotesk text-[var(--text-primary)] text-[48px] font-bold tracking-[-1px] text-center">
