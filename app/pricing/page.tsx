@@ -37,9 +37,9 @@ export default function Pricing() {
           </p>
 
           {/* Install Button */}
-          <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity rounded-full">
+          <a href="/install" className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity rounded-full">
             <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">Install Musashi</span>
-          </button>
+          </a>
 
           {/* Additional Info */}
           <div className="flex flex-col items-center gap-4 pt-8 border-t border-[var(--border-lightest)] w-full">

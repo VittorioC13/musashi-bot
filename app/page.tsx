@@ -49,9 +49,9 @@ export default function Home() {
             <SmoothScrollLink targetId="see-the-difference" className="px-8 py-[14px] bg-[var(--overlay-light)] border border-[var(--border-lighter)] hover:bg-[var(--overlay-lighter)] transition-colors">
               <span className="font-jetbrains text-[var(--text-primary)] text-xs font-bold">Demo</span>
             </SmoothScrollLink>
-            <button className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
+            <a href="/install" className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
               <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Install</span>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -290,9 +290,9 @@ export default function Home() {
             Built. For. Agents.
           </h2>
 
-          <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity mx-auto">
+          <a href="/install" className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity mx-auto">
             <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">INSTALL ON CHROME — FREE</span>
-          </button>
+          </a>
         </div>
       </section>
 
