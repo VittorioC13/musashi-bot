@@ -12,7 +12,6 @@ export default function Home() {
           MUSASHI
         </div>
         <nav className="flex items-center gap-8">
-          <a href="#" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">MARKETS</a>
           <a href="/ai" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">DOCS</a>
           <a href="/pricing" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">PRICING</a>
           <a href="/privacy" className="font-jetbrains text-[var(--text-secondary)] text-xs font-medium hover:text-[var(--text-primary)] transition-colors">PRIVACY</a>
@@ -285,14 +284,16 @@ export default function Home() {
       <FAQ />
 
       {/* Final CTA Section */}
-      <section className="flex flex-col items-center justify-center gap-10 w-full px-[120px] py-[120px] bg-[var(--bg-primary)] border border-[var(--border-primary)] min-h-[500px]">
-        <h2 className="font-grotesk text-[var(--text-primary)] text-[72px] font-bold tracking-[-2px] text-center leading-[1.1]">
-          Built. For. Agents.
-        </h2>
+      <section className="flex w-full px-[120px] py-[120px] bg-[var(--bg-primary)] border border-[var(--border-primary)] min-h-[500px]">
+        <div className="flex flex-col items-center justify-center gap-10 w-full mx-auto">
+          <h2 className="font-grotesk text-[var(--text-primary)] text-[72px] font-bold tracking-[-2px] text-center leading-[1.1]">
+            Built. For. Agents.
+          </h2>
 
-        <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
-          <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">INSTALL ON CHROME — FREE</span>
-        </button>
+          <button className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity mx-auto">
+            <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">INSTALL ON CHROME — FREE</span>
+          </button>
+        </div>
       </section>
 
       {/* Footer */}
