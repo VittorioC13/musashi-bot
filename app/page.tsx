@@ -39,9 +39,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Like Musashi mastered timing, you&apos;ll master markets.<br />
-            See prediction market opportunities the moment they<br />
-            surface on Twitter—before everyone else.
+            Like Musashi mastered timing, you&apos;ll master markets.
           </p>
 
           {/* CTA Buttons */}
