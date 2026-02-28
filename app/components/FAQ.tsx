@@ -55,15 +55,12 @@ export default function FAQ() {
       <div className="w-full lg:w-[400px] flex-shrink-0">
         <div className="sticky top-8 flex flex-col gap-8 p-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] rounded-lg">
           {/* Investment */}
-          <div className="flex flex-col items-center gap-2 pb-6 border-b border-[var(--border-primary)]">
+          <div className="flex flex-col items-center justify-center gap-3 pb-6 border-b border-[var(--border-primary)] min-h-[140px]">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-bold tracking-[2px] uppercase">
               Your Investment
             </span>
             <span className="font-grotesk text-[var(--text-primary)] text-[64px] font-bold tracking-[-2px] leading-none">
               Free
-            </span>
-            <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal">
-              vs. $0-$29/month competitors
             </span>
           </div>
 
