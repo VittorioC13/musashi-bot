@@ -24,10 +24,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full h-[860px] bg-[var(--bg-primary)] overflow-hidden">
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#0A0A0F] to-[#0F0F1A] opacity-80" />
         {/* Hero Content */}
         <div className="absolute left-[80px] top-[100px] w-[500px] flex flex-col gap-7 z-10">
           {/* Badge */}
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00FF88] animate-pulse" />
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
               CHROME EXTENSION • FREE • 650+ MARKETS
             </span>

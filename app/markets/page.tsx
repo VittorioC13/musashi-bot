@@ -1,96 +1,18 @@
 export default function Markets() {
   const categories = [
-    {
-      name: 'US Politics',
-      slug: 'us_politics',
-      description: 'Elections, Congress, Presidential actions, legislation',
-      icon: '🏛️',
-      count: '120+',
-    },
-    {
-      name: 'Crypto',
-      slug: 'crypto',
-      description: 'Bitcoin, Ethereum, ETFs, price predictions, regulation',
-      icon: '₿',
-      count: '95+',
-    },
-    {
-      name: 'Economics',
-      slug: 'economics',
-      description: 'Inflation, recession, unemployment, GDP, markets',
-      icon: '💰',
-      count: '85+',
-    },
-    {
-      name: 'Technology',
-      slug: 'technology',
-      description: 'AI regulation, tech earnings, market caps, launches',
-      icon: '💻',
-      count: '75+',
-    },
-    {
-      name: 'Sports',
-      slug: 'sports',
-      description: 'Super Bowl, NBA, NFL, major championships, playoffs',
-      icon: '⚽',
-      count: '65+',
-    },
-    {
-      name: 'Entertainment',
-      slug: 'entertainment',
-      description: 'Oscars, Grammys, box office, streaming, awards',
-      icon: '🎬',
-      count: '60+',
-    },
-    {
-      name: 'Geopolitics',
-      slug: 'geopolitics',
-      description: 'International conflicts, peace deals, summits, treaties',
-      icon: '🌍',
-      count: '45+',
-    },
-    {
-      name: 'Monetary Policy',
-      slug: 'monetary_policy',
-      description: 'Fed rates, FOMC decisions, central bank actions',
-      icon: '🏦',
-      count: '40+',
-    },
-    {
-      name: 'Climate',
-      slug: 'climate',
-      description: 'Temperature records, climate policy, emissions',
-      icon: '🌡️',
-      count: '30+',
-    },
-    {
-      name: 'Gaming',
-      slug: 'gaming',
-      description: 'Esports, game releases, tournaments, streaming',
-      icon: '🎮',
-      count: '28+',
-    },
-    {
-      name: 'Music',
-      slug: 'music',
-      description: 'Album releases, chart performance, tours, awards',
-      icon: '🎵',
-      count: '25+',
-    },
-    {
-      name: 'Science',
-      slug: 'science',
-      description: 'Space, medical breakthroughs, research, discoveries',
-      icon: '🔬',
-      count: '20+',
-    },
-    {
-      name: 'Lifestyle',
-      slug: 'lifestyle',
-      description: 'Culture, trends, social movements, consumer behavior',
-      icon: '✨',
-      count: '15+',
-    },
+    { name: 'US Politics', count: '120+', color: '#4A90E2' },
+    { name: 'Crypto', count: '95+', color: '#F5A623' },
+    { name: 'Economics', count: '85+', color: '#50E3C2' },
+    { name: 'Technology', count: '75+', color: '#B8E986' },
+    { name: 'Sports', count: '65+', color: '#E94B3C' },
+    { name: 'Entertainment', count: '60+', color: '#BD10E0' },
+    { name: 'Geopolitics', count: '45+', color: '#7ED321' },
+    { name: 'Monetary Policy', count: '40+', color: '#00FF88' },
+    { name: 'Climate', count: '30+', color: '#417505' },
+    { name: 'Gaming', count: '28+', color: '#9013FE' },
+    { name: 'Music', count: '25+', color: '#FF6B6B' },
+    { name: 'Science', count: '20+', color: '#4ECDC4' },
+    { name: 'Lifestyle', count: '15+', color: '#FFE66D' },
   ];
 
   return (
@@ -112,77 +34,45 @@ export default function Markets() {
       </header>
 
       {/* Markets Content */}
-      <main className="flex flex-col items-center w-full px-[80px] lg:px-[120px] py-[100px]">
+      <main className="flex flex-col items-center w-full px-[80px] lg:px-[120px] py-[120px]">
         {/* Header */}
-        <div className="flex flex-col items-center gap-4 w-full max-w-[1200px] mb-16">
-          <h1 className="font-grotesk text-[var(--text-primary)] text-[56px] font-bold tracking-[-2px] text-center leading-[1.1]">
-            650+ Markets Across 13 Categories
+        <div className="flex flex-col items-center gap-2 w-full max-w-[600px] mb-20">
+          <h1 className="font-grotesk text-[var(--text-primary)] text-[48px] font-bold tracking-[-2px] text-center leading-[1.1]">
+            Markets
           </h1>
-          <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7] text-center max-w-[600px]">
-            Real-time prediction markets from Polymarket and Kalshi.<br />
-            Every market shown inline on Twitter as events unfold.
+          <p className="font-jetbrains text-[var(--text-tertiary)] text-[13px] font-normal text-center">
+            650+ active markets
           </p>
         </div>
 
-        {/* Category Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1200px]">
-          {categories.map((category) => (
+        {/* Category List */}
+        <div className="flex flex-col w-full max-w-[700px] gap-0">
+          {categories.map((category, index) => (
             <div
-              key={category.slug}
-              className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border border-[var(--border-primary)] hover:border-[var(--border-lighter)] transition-colors rounded-lg group"
+              key={category.name}
+              className="flex items-center justify-between py-6 border-b border-[var(--border-primary)] hover:bg-[var(--overlay-light)] transition-colors px-8 group"
             >
-              {/* Icon & Name */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{category.icon}</span>
-                  <h3 className="font-grotesk text-[var(--text-primary)] text-xl font-semibold">
-                    {category.name}
-                  </h3>
-                </div>
-                <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-medium">
-                  {category.count}
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-1 h-8 rounded-full transition-all group-hover:h-10"
+                  style={{ backgroundColor: category.color }}
+                />
+                <span className="font-grotesk text-[var(--text-primary)] text-lg font-medium">
+                  {category.name}
                 </span>
               </div>
-
-              {/* Description */}
-              <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                {category.description}
-              </p>
-
-              {/* Market Count Badge */}
-              <div className="flex items-center gap-2 pt-2 border-t border-[var(--border-primary)]">
-                <div className="flex items-center gap-1">
-                  <svg className="w-3 h-3 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                  <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-medium">
-                    Live markets
-                  </span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <svg className="w-3 h-3 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
-                  </svg>
-                  <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-medium">
-                    Real-time updates
-                  </span>
-                </div>
-              </div>
+              <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
+                {category.count}
+              </span>
             </div>
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="flex flex-col items-center gap-6 w-full max-w-[800px] mt-16 pt-16 border-t border-[var(--border-primary)]">
-          <h2 className="font-grotesk text-[var(--text-primary)] text-[32px] font-bold tracking-[-1px] text-center">
-            See These Markets Inline on Twitter
-          </h2>
-          <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal text-center max-w-[500px]">
-            Install Musashi to see relevant prediction markets appear automatically as you browse Twitter. No manual searching required.
-          </p>
-          <a href="/install" className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity rounded-full">
-            <span className="font-jetbrains text-[var(--bg-primary)] text-sm font-bold">INSTALL ON CHROME — FREE</span>
-          </a>
+        {/* Footer Note */}
+        <div className="flex flex-col items-center gap-3 mt-20">
+          <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">
+            Polymarket • Kalshi • Real-time updates
+          </span>
         </div>
       </main>
 
