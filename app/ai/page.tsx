@@ -61,7 +61,7 @@ export default async function DocsPage(props: PageProps) {
             href="/ai"
             className="font-jetbrains text-xs font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--text-primary)]"
           >
-            DOCS
+            API
           </Link>
           <Link
             href="/pricing"
