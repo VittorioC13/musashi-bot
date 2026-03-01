@@ -34,7 +34,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Your agent scrolls Twitter. You trade the opportunities.
+            In the future, your agents scroll and trade for you.
           </p>
 
           {/* CTA Buttons */}
