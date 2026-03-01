@@ -240,27 +240,6 @@ export default function Home() {
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">CFTC-regulated exchange</span>
           </div>
         </div>
-
-        <div className="flex items-center justify-center gap-4 w-full">
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">POLITICS</span>
-          </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">CRYPTO</span>
-          </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">ECONOMICS</span>
-          </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">SPORTS</span>
-          </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">TECH &amp; AI</span>
-          </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
-            <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">CLIMATE</span>
-          </div>
-        </div>
       </section>
 
       {/* FAQ Section */}
