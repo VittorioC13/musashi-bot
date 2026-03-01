@@ -1,10 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function TerminalDemo() {
   const [visibleLinesLeft, setVisibleLinesLeft] = useState(0);
   const [visibleLinesRight, setVisibleLinesRight] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   // Left column has 10 lines
   const leftLines = 10;
@@ -12,36 +14,60 @@ export default function TerminalDemo() {
   const rightLines = 13;
 
   useEffect(() => {
-    // Show left column lines one by one
-    const leftInterval = setInterval(() => {
-      setVisibleLinesLeft((prev) => {
-        if (prev >= leftLines) {
-          clearInterval(leftInterval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 300);
+    const section = sectionRef.current;
+    if (!section || hasStarted) return;
 
-    // Show right column lines one by one (with slight delay)
-    const rightInterval = setInterval(() => {
-      setVisibleLinesRight((prev) => {
-        if (prev >= rightLines) {
-          clearInterval(rightInterval);
-          return prev;
-        }
-        return prev + 1;
-      });
-    }, 300);
+    let leftInterval: NodeJS.Timeout | null = null;
+    let rightInterval: NodeJS.Timeout | null = null;
+
+    // Intersection Observer to detect when section enters viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setHasStarted(true);
+            
+            // Show left column lines one by one
+            leftInterval = setInterval(() => {
+              setVisibleLinesLeft((prev) => {
+                if (prev >= leftLines) {
+                  if (leftInterval) clearInterval(leftInterval);
+                  return prev;
+                }
+                return prev + 1;
+              });
+            }, 300);
+
+            // Show right column lines one by one
+            rightInterval = setInterval(() => {
+              setVisibleLinesRight((prev) => {
+                if (prev >= rightLines) {
+                  if (rightInterval) clearInterval(rightInterval);
+                  return prev;
+                }
+                return prev + 1;
+              });
+            }, 300);
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Start animation when 20% of the section is visible
+        rootMargin: '0px',
+      }
+    );
+
+    observer.observe(section);
 
     return () => {
-      clearInterval(leftInterval);
-      clearInterval(rightInterval);
+      observer.disconnect();
+      if (leftInterval) clearInterval(leftInterval);
+      if (rightInterval) clearInterval(rightInterval);
     };
-  }, []);
+  }, [hasStarted, leftLines, rightLines]);
 
   return (
-    <section className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
+    <section ref={sectionRef} className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
       <div className="flex flex-col items-center gap-4 w-full">
         <span className="font-jetbrains text-[var(--text-lighter)] text-[11px] font-bold tracking-[2px]">
           // FOR AGENTS
