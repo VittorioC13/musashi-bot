@@ -111,7 +111,7 @@ export default function Home() {
 
             {/* Bottom Left - Quick Stat */}
             <div className="absolute bottom-[180px] left-[90px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-              <span className="font-jetbrains text-white text-xs font-bold">650 MARKETS</span>
+              <span className="font-jetbrains text-white text-xs font-bold">650+ MARKETS</span>
             </div>
 
             {/* Bottom Right - Market Trend */}
@@ -185,7 +185,7 @@ export default function Home() {
                 Real-time Market Data
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                650 markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
+                650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
               </p>
             </div>
 
@@ -230,13 +230,13 @@ export default function Home() {
         <div className="flex items-center justify-center gap-10 w-full">
           <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Polymarket</span>
-            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">500+ Markets</span>
+            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">500+ markets</span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">Live price updates every 30s</span>
           </div>
 
           <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Kalshi</span>
-            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">150+ Markets</span>
+            <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">150+ markets</span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">CFTC-regulated exchange</span>
           </div>
         </div>
