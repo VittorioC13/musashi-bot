@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BeforeAfterSlider from "./BeforeAfterSlider";
+import TerminalDemo from "./TerminalDemo";
 import SmoothScrollLink from "./components/SmoothScrollLink";
 
 export default function Home() {
@@ -117,7 +118,7 @@ export default function Home() {
 
           <div className="grid grid-cols-3 gap-6 w-full">
             {/* Step 1 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
               <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
                 <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">1</span>
               </div>
@@ -133,7 +134,7 @@ export default function Home() {
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
               <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
                 <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">2</span>
               </div>
@@ -149,7 +150,7 @@ export default function Home() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+            <div className="flex flex-col gap-4 p-6 bg-[var(--bg-secondary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
               <div className="flex items-center justify-center w-10 h-10 bg-[var(--text-primary)]">
                 <span className="font-jetbrains text-[var(--bg-primary)] text-lg font-bold">3</span>
               </div>
@@ -163,6 +164,62 @@ export default function Home() {
                 Click any market card to jump to Polymarket or Kalshi. One click from discovery to execution.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Terminal Demo Section */}
+      <TerminalDemo />
+
+      {/* Infrastructure for Intelligent Agents Section */}
+      <section className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
+        <div className="flex flex-col items-center gap-4 w-full">
+          <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
+            Infrastructure for Intelligent Agents
+          </h2>
+          <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7] text-center w-[700px]">
+            AI agents need context to surface opportunities their users care about. Musashi provides the bridge between social signals and prediction markets.
+          </p>
+        </div>
+
+        <div className="flex gap-6 w-full max-w-[1100px]">
+          {/* Card 1: Real-time Market Data */}
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
+            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
+            </svg>
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Real-time Market Data
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+              650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
+            </p>
+          </div>
+
+          {/* Card 2: Context-Aware Matching */}
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
+            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
+            </svg>
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              Context-Aware Matching
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+              Intelligent matching between social conversations and markets. No noise—only relevant opportunities surface.
+            </p>
+          </div>
+
+          {/* Card 3: API-First Design */}
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
+            <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+            <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
+              API-First Design
+            </h3>
+            <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
+              Built for programmatic access. Agents can query, filter, and act on market data seamlessly.
+            </p>
           </div>
         </div>
       </section>
@@ -183,7 +240,7 @@ export default function Home() {
 
         {/* Feature Cards - Row 1 */}
         <div className="flex gap-6 w-full">
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
             </svg>
@@ -195,7 +252,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
             </svg>
@@ -210,7 +267,7 @@ export default function Home() {
 
         {/* Feature Cards - Row 2 */}
         <div className="flex gap-6 w-full">
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
             </svg>
@@ -222,7 +279,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col gap-4 p-8 bg-[var(--bg-tertiary)] border-l-2 border-r border-b border-t border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <svg className="w-7 h-7 fill-[var(--text-primary)]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M23 6l-9.5 9.5-5-5L1 18l1.5 1.5 6-6.01 5 5L22 8.5z"/>
             </svg>
@@ -246,13 +303,13 @@ export default function Home() {
         </p>
 
         <div className="flex items-center justify-center gap-10 w-full">
-          <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Polymarket</span>
             <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">[500+ MARKETS]</span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">// LIVE PRICE POLLING EVERY 30S</span>
           </div>
 
-          <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)]">
+          <div className="flex-1 flex flex-col items-center gap-3 px-12 py-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-grotesk text-[var(--text-primary)] text-[22px] font-bold">Kalshi</span>
             <span className="font-jetbrains text-[var(--text-muted)] text-[13px] font-medium">[150+ MARKETS]</span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">// CFTC-REGULATED EXCHANGE</span>
@@ -260,22 +317,22 @@ export default function Home() {
         </div>
 
         <div className="flex items-center justify-center gap-4 w-full">
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">POLITICS</span>
           </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">CRYPTO</span>
           </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">ECONOMICS</span>
           </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">SPORTS</span>
           </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">TECH &amp; AI</span>
           </div>
-          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)]">
+          <div className="px-5 py-2 bg-[var(--overlay-lighter)] border border-[var(--border-lighter)] transition-all duration-300 hover:border-[#FFFFFF] hover:border-opacity-60 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.3)] cursor-pointer">
             <span className="font-jetbrains text-[var(--text-light)] text-[11px] font-bold">CLIMATE</span>
           </div>
         </div>
