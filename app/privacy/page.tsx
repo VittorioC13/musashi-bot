@@ -404,7 +404,7 @@ export default function PrivacyPolicy() {
               MUSASHI
             </span>
             <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal max-w-[400px] leading-relaxed">
-              Turn social signals into market intelligence. Agent-ready infrastructure for prediction markets.
+              Chrome extension that shows prediction markets on Twitter. API for agents.
             </span>
           </div>
 
