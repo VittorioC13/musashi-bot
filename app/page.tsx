@@ -182,10 +182,10 @@ export default function Home() {
                 <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
               </svg>
               <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                Live Market Data
+                650+ Markets
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
+                Polymarket and Kalshi in one place. Prices, odds, volume, and resolution dates. Updates every 30 seconds.
               </p>
             </div>
 
@@ -195,10 +195,10 @@ export default function Home() {
                 <path d="M21.92 11.6C19.9 6.91 16.1 4 12 4s-7.9 2.91-9.92 7.6a1 1 0 000 .8C4.1 17.09 7.9 20 12 20s7.9-2.91 9.92-7.6a1 1 0 000-.8zM12 18c-3.17 0-6.17-2.29-7.9-6C5.83 8.29 8.83 6 12 6s6.17 2.29 7.9 6c-1.73 3.71-4.73 6-7.9 6zm0-10a4 4 0 100 8 4 4 0 000-8zm0 6a2 2 0 110-4 2 2 0 010 4z"/>
               </svg>
               <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                Context-Aware Matching
+                Keyword Matching
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                Matches tweets to relevant prediction markets. Only shows markets that match what you're reading.
+                Tweet mentions "Bitcoin"? Shows BTC markets. Tweet about "Trump"? Shows election markets. Synonym expansion included.
               </p>
             </div>
 
@@ -208,10 +208,10 @@ export default function Home() {
                 <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3"/>
               </svg>
               <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                API-First Design
+                REST API
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                Built for programmatic access. Agents can query, filter, and act on market data seamlessly.
+                POST /api/analyze-text with any string. Get back matching markets as JSON. No auth required, free tier available.
               </p>
             </div>
           </div>
