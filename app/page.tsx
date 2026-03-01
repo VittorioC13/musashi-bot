@@ -111,7 +111,7 @@ export default function Home() {
 
             {/* Bottom Left - Quick Stat */}
             <div className="absolute bottom-[180px] left-[90px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-              <span className="font-jetbrains text-white text-xs font-bold">650+ MARKETS</span>
+              <span className="font-jetbrains text-white text-xs font-bold">650 MARKETS</span>
             </div>
 
             {/* Bottom Right - Market Trend */}
@@ -185,7 +185,7 @@ export default function Home() {
                 Real-time Market Data
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
+                650 markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
               </p>
             </div>
 
