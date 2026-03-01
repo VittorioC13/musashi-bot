@@ -38,13 +38,18 @@ export default function Home() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex gap-4">
-            <SmoothScrollLink targetId="see-the-difference" className="px-8 py-[14px] bg-[var(--overlay-light)] border border-[var(--border-lighter)] hover:bg-[var(--overlay-lighter)] transition-colors">
-              <span className="font-jetbrains text-[var(--text-primary)] text-xs font-bold">Demo</span>
-            </SmoothScrollLink>
-            <a href="/install" className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
-              <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Install</span>
-            </a>
+          <div className="flex flex-col gap-3">
+            <div className="flex gap-4">
+              <SmoothScrollLink targetId="see-the-difference" className="px-8 py-[14px] bg-[var(--overlay-light)] border border-[var(--border-lighter)] hover:bg-[var(--overlay-lighter)] transition-colors">
+                <span className="font-jetbrains text-[var(--text-primary)] text-xs font-bold">Demo</span>
+              </SmoothScrollLink>
+              <a href="/install" className="px-8 py-[14px] bg-[var(--text-primary)] hover:opacity-90 transition-opacity">
+                <span className="font-jetbrains text-[var(--bg-primary)] text-xs font-bold">Install</span>
+              </a>
+            </div>
+            <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-normal">
+              Chrome Desktop Only
+            </span>
           </div>
         </div>
 
