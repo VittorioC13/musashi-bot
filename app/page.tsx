@@ -34,7 +34,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            See prediction markets while browsing Twitter.
+            Your agent scrolls Twitter. You trade the opportunities.
           </p>
 
           {/* CTA Buttons */}
