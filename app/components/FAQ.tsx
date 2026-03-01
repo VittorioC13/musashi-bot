@@ -22,7 +22,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'What markets does Musashi cover?',
-    answer: '650+ active markets from Polymarket and Kalshi. Politics, crypto, economics, sports, tech, climate, and more. Markets update in real-time and we add new ones daily.',
+    answer: '650+ active markets from Polymarket and Kalshi. Politics, crypto, economics, sports, tech, climate, and more. Markets update every 30 seconds and we add new ones daily.',
   },
   {
     question: 'Does Musashi work on mobile?',
@@ -83,7 +83,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  Real-time price updates every 30 seconds
+                  Price updates every 30 seconds
                 </span>
               </li>
               <li className="flex items-start gap-3">

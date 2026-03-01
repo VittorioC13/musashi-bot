@@ -182,7 +182,7 @@ export default function Home() {
                 <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
               </svg>
               <h3 className="font-grotesk text-[var(--text-primary)] text-lg font-semibold">
-                Real-time Market Data
+                Live Market Data
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
                 650+ markets updating live. Structured JSON feeds ready for agents to consume and analyze instantly.
@@ -224,7 +224,7 @@ export default function Home() {
           The Bridge Between Social & Markets
         </h2>
         <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] text-center w-[600px]">
-          Real-time data from the two largest prediction market platforms, matched against Twitter conversations. Structured for humans and agents alike.
+          Live data from the two largest prediction market platforms, matched against Twitter conversations. Structured for humans and agents alike.
         </p>
 
         <div className="flex items-center justify-center gap-10 w-full">
