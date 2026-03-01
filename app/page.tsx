@@ -27,14 +27,6 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#0A0A0F] to-[#0F0F1A] opacity-80" />
         {/* Hero Content */}
         <div className="absolute left-[80px] top-[100px] w-[500px] flex flex-col gap-7 z-10">
-          {/* Badge */}
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00FF88] animate-pulse" />
-            <span className="font-jetbrains text-[var(--text-tertiary)] text-xs font-normal">
-              CHROME EXTENSION • FREE • 650+ MARKETS
-            </span>
-          </div>
-
           {/* Headline */}
           <h1 className="font-jetbrains text-[var(--text-primary)] text-[52px] font-normal leading-[1.15] tracking-[-2px]">
             Trade the <br />[Tweets]
@@ -147,16 +139,6 @@ export default function Home() {
               <line x1="720" y1="110" x2="640" y2="310" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
             </svg>
           </div>
-        </div>
-
-        {/* Trust Indicators - Real Data */}
-        <div className="absolute bottom-0 left-0 w-full px-[80px] py-3 border-t border-[var(--border-lightest)] flex justify-between items-center z-10">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 bg-[#00FF88] rounded-full animate-pulse" />
-            <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">650+ Markets Live</span>
-          </div>
-          <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">Polymarket • Kalshi</span>
-          <span className="font-jetbrains text-[11px] font-medium text-[var(--text-tertiary)]">Chrome Extension • Free</span>
         </div>
       </section>
 
