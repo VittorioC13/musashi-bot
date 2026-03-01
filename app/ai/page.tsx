@@ -58,28 +58,16 @@ export default async function DocsPage(props: PageProps) {
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           <Link
-            href="/"
-            className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-          >
-            MARKETS
-          </Link>
-          <Link
-            href="/"
-            className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-          >
-            SIGNALS
-          </Link>
-          <Link
-            href="/"
-            className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
-          >
-            TERMINAL
-          </Link>
-          <Link
             href="/ai"
             className="font-jetbrains text-xs font-medium text-[var(--text-primary)] transition-colors hover:text-[var(--text-primary)]"
           >
-            DOCS
+            API
+          </Link>
+          <Link
+            href="/pricing"
+            className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+          >
+            PRICING
           </Link>
           <Link
             href="/privacy"

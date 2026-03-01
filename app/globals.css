@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  /* Backgrounds */
-  --bg-primary: #000000;
-  --bg-secondary: #000000;
-  --bg-tertiary: #020202;
+  /* Backgrounds - subtle dark variations */
+  --bg-primary: #0A0A0F;
+  --bg-secondary: #12121A;
+  --bg-tertiary: #1A1A24;
 
   /* Text Colors */
   --text-primary: #FFFFFF;
-  --text-secondary: #8a8a8a;
-  --text-tertiary: #6a6a6a;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
   --text-muted: #A0A0A0;
   --text-light: #B0B0B0;
   --text-lighter: #C0C0C0;
 
-  /* Borders */
-  --border-primary: #2f2f2f;
+  /* Borders - subtle blue-gray tints */
+  --border-primary: #2A2A3A;
   --border-light: #FFFFFF10;
   --border-lighter: #FFFFFF20;
   --border-lightest: #FFFFFF08;
@@ -25,15 +25,15 @@
   --overlay-lighter: #FFFFFF08;
 
   /* Tweet mockup colors */
-  --tweet-bg: #16181C;
-  --tweet-card: #1A1D21;
-  --tweet-border: #2F3336;
+  --tweet-bg: #1A1A24;
+  --tweet-card: #20202E;
+  --tweet-border: #2A2A3A;
   --tweet-text: #E7E9EA;
-  --tweet-missed-bg: #0A0A0A;
-  --tweet-missed-icon: #3a3a3a;
-  --tweet-missed-text: #3a3a3a;
-  --tweet-missed-sub: #2a2a2a;
-  --tweet-missed-border: #1a1a1a;
+  --tweet-missed-bg: #12121A;
+  --tweet-missed-icon: #3a3a4a;
+  --tweet-missed-text: #4a4a5a;
+  --tweet-missed-sub: #2a2a3a;
+  --tweet-missed-border: #1a1a2a;
 }
 
 @layer base {

@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "MUSASHI - Trade the Tweets",
-  description: "Real-time intelligence, on chain signals, and predictive analytics. Engineered for those who move before the market.",
+  description: "Live market intelligence, on chain signals, and predictive analytics. Engineered for those who move before the market.",
   icons: {
     icon: '/icon.svg',
   },
