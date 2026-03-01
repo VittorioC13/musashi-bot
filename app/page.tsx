@@ -34,7 +34,7 @@ export default function Home() {
 
           {/* Subtitle */}
           <p className="font-jetbrains text-[var(--text-secondary)] text-[15px] font-normal leading-[1.7]">
-            Like Musashi mastered timing, you&apos;ll master markets.
+            See prediction markets while browsing Twitter.
           </p>
 
           {/* CTA Buttons */}
@@ -146,7 +146,7 @@ export default function Home() {
       <section id="see-the-difference" className="flex flex-col items-center gap-12 w-full px-[120px] py-[100px] bg-[var(--bg-primary)]">
         <div className="flex flex-col items-center gap-4">
           <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px] text-center">
-            Musashi Fills the Gap between Talks and Trades
+            Markets appear where conversations happen
           </h2>
         </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
                 Context-Aware Matching
               </h3>
               <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] w-full">
-                Intelligent matching between social conversations and markets. No noise—only relevant opportunities surface.
+                Matches tweets to relevant prediction markets. Only shows markets that match what you're reading.
               </p>
             </div>
 
@@ -270,7 +270,7 @@ export default function Home() {
       <section className="flex w-full px-[120px] py-[120px] bg-[var(--bg-primary)] border border-[var(--border-primary)] min-h-[500px]">
         <div className="flex flex-col items-center justify-center gap-10 w-full mx-auto">
           <h2 className="font-grotesk text-[var(--text-primary)] text-[72px] font-bold tracking-[-2px] text-center leading-[1.1]">
-            Built. For. Agents.
+            Built for agents
           </h2>
 
           <a href="/install" className="px-12 py-5 bg-[var(--text-primary)] hover:opacity-90 transition-opacity mx-auto">
