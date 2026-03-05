@@ -112,44 +112,72 @@ export default function TerminalDemo() {
           </div>
           <div className="font-jetbrains text-[13px] leading-[1.8] space-y-2">
             <div className={`text-[#888] transition-opacity duration-300 ${visibleLinesRight >= 1 ? 'opacity-100' : 'opacity-0'}`}>
-              <span className="text-[#888]">$</span> <span className="text-[#4a9eff]">trading-agent</span> <span className="text-[#e0e0e0]">is running...</span> <span className="text-[#27c93f]">musashi active</span>
+              <span className="text-[#888]">$</span> <span className="text-[#4a9eff]">curl</span> <span className="text-[#e0e0e0]">musashi.bot/api/analyze-text</span>
             </div>
-            <div className={`text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 2 ? 'opacity-100' : 'opacity-0'}`}>
-              Musashi mapped your world: Twitter sentiment, Kalshi, Polymarket, and more are ready.
+            <div className={`text-[#666] italic transition-opacity duration-300 ${visibleLinesRight >= 2 ? 'opacity-100' : 'opacity-0'}`}>
+              // Agent queries: &quot;Iran strikes Israel today&quot;
             </div>
-            <div className={`text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 3 ? 'opacity-100' : 'opacity-0'}`}>
-              This is not a chat box anymore. It is an operator that can move across agentware.
+            <div className={`mt-3 text-[#888] transition-opacity duration-300 ${visibleLinesRight >= 3 ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="text-[#27c93f]">200 OK</span> <span className="text-[#666]">• 147ms</span>
             </div>
-            <div className={`mt-4 transition-opacity duration-300 ${visibleLinesRight >= 4 ? 'opacity-100' : 'opacity-0'}`}>
-              <span className="text-[#888]">querying</span> <span className="text-[#4a9eff]">musashi</span> <span className="text-[#e0e0e0]">→ mapped sources + market signals + live sentiment</span>
-            </div>
-            <div className={`flex items-center gap-3 p-4 bg-[#1a1a1a] border border-[#333] rounded mt-4 transition-opacity duration-300 ${visibleLinesRight >= 5 ? 'opacity-100' : 'opacity-0'}`}>
-              <div className="text-xl">📊</div>
-              <div className="flex-1">
-                <div className="text-[#ffbd2e]">twitter + kalshi + polymarket</div>
-                <div className="text-[11px] text-[#888] mt-1">connected • live market flow</div>
+            <div className={`mt-2 p-3 bg-[#0d0d0d] border border-[#1a1a1a] rounded text-[11px] transition-opacity duration-300 ${visibleLinesRight >= 4 ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="text-[#888]">&#123;</div>
+              <div className="ml-3 text-[#4a9eff]">&quot;markets&quot;: <span className="text-[#888]">[</span></div>
+              <div className="ml-6">
+                <span className="text-[#888]">&#123;</span><span className="text-[#ffbd2e]">&quot;title&quot;</span><span className="text-[#888]">:</span> <span className="text-[#27c93f]">&quot;US/Israel strike Iran March 6?&quot;</span><span className="text-[#888]">,</span>
               </div>
-              <div className="text-[#27c93f] text-xs animate-pulse">●</div>
+              <div className="ml-6">
+                <span className="text-[#ffbd2e]">&quot;confidence&quot;</span><span className="text-[#888]">:</span> <span className="text-[#4a9eff]">0.95</span><span className="text-[#888]">,</span>
+              </div>
+              <div className="ml-6">
+                <span className="text-[#ffbd2e]">&quot;yesPrice&quot;</span><span className="text-[#888]">:</span> <span className="text-[#4a9eff]">0.99</span><span className="text-[#888]">,</span>
+              </div>
+              <div className="ml-6">
+                <span className="text-[#ffbd2e]">&quot;platform&quot;</span><span className="text-[#888]">:</span> <span className="text-[#27c93f]">&quot;polymarket&quot;</span>
+              </div>
+              <div className="ml-3 text-[#888]">&#125;</div>
+              <div className="ml-3 text-[#888]">],</div>
+              <div className="ml-3 text-[#4a9eff]">&quot;sentiment&quot;: <span className="text-[#888]">&#123;</span> <span className="text-[#ffbd2e]">&quot;sentiment&quot;</span><span className="text-[#888]">:</span> <span className="text-[#27c93f]">&quot;neutral&quot;</span> <span className="text-[#888]">&#125;,</span></div>
+              <div className="ml-3 text-[#4a9eff]">&quot;suggested_action&quot;: <span className="text-[#888]">&#123;</span></div>
+              <div className="ml-6">
+                <span className="text-[#ffbd2e]">&quot;direction&quot;</span><span className="text-[#888]">:</span> <span className="text-[#ff5f56]">&quot;HOLD&quot;</span><span className="text-[#888]">,</span>
+              </div>
+              <div className="ml-6">
+                <span className="text-[#ffbd2e]">&quot;edge&quot;</span><span className="text-[#888]">:</span> <span className="text-[#4a9eff]">0</span>
+              </div>
+              <div className="ml-3 text-[#888]">&#125;</div>
+              <div className="text-[#888]">&#125;</div>
             </div>
-            <div className={`mt-4 text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 6 ? 'opacity-100' : 'opacity-0'}`}>
-              Analyzing Twitter sentiment on Bitcoin, matching to prediction markets, and generating trading signals now.
+            <div className={`mt-4 text-[#888] transition-opacity duration-300 ${visibleLinesRight >= 5 ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="text-[#888]">$</span> <span className="text-[#4a9eff]">curl</span> <span className="text-[#e0e0e0]">musashi.bot/api/feed?urgency=critical</span>
             </div>
-            <div className={`text-[#27c93f] transition-opacity duration-300 ${visibleLinesRight >= 7 ? 'opacity-100' : 'opacity-0'}`}>
-              Found 3 high-confidence signals:
+            <div className={`mt-2 text-[#27c93f] transition-opacity duration-300 ${visibleLinesRight >= 6 ? 'opacity-100' : 'opacity-0'}`}>
+              → 3 tweets • geopolitics • urgency: critical
             </div>
-            <div className={`ml-5 text-[#4a9eff] space-y-1 transition-opacity duration-300 ${visibleLinesRight >= 8 ? 'opacity-100' : 'opacity-0'}`}>
-              <div>• Bitcoin $100k by 2025: <span className="text-[#27c93f]">BULLISH</span> (confidence: 0.87)</div>
-              <div className={`transition-opacity duration-300 ${visibleLinesRight >= 9 ? 'opacity-100' : 'opacity-0'}`}>• Fed rate cut Q1 2025: <span className="text-[#27c93f]">BULLISH</span> (confidence: 0.82)</div>
-              <div className={`transition-opacity duration-300 ${visibleLinesRight >= 10 ? 'opacity-100' : 'opacity-0'}`}>• AI regulation by June: <span className="text-[#ffbd2e]">NEUTRAL</span> (confidence: 0.65)</div>
+            <div className={`mt-4 text-[#888] transition-opacity duration-300 ${visibleLinesRight >= 7 ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="text-[#888]">$</span> <span className="text-[#4a9eff]">curl</span> <span className="text-[#e0e0e0]">musashi.bot/api/markets/arbitrage</span>
             </div>
-            <div className={`mt-4 text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 11 ? 'opacity-100' : 'opacity-0'}`}>
-              Executing trades on Kalshi and Polymarket based on sentiment analysis.
+            <div className={`mt-2 p-3 bg-[#0d0d0d] border border-[#1a1a1a] rounded text-[11px] transition-opacity duration-300 ${visibleLinesRight >= 8 ? 'opacity-100' : 'opacity-0'}`}>
+              <div className="text-[#888]">&#123;</div>
+              <div className="ml-3 text-[#ffbd2e]">&quot;spread&quot;</div><span className="text-[#888]">:</span> <span className="text-[#4a9eff]">0.08</span><span className="text-[#888]">,</span> <span className="text-[#666]">// 8% profit</span>
+              <div className="ml-3 text-[#ffbd2e]">&quot;direction&quot;</div><span className="text-[#888]">:</span> <span className="text-[#27c93f]">&quot;buy_kalshi_sell_poly&quot;</span><span className="text-[#888]">,</span>
+              <div className="ml-3 text-[#ffbd2e]">&quot;urgency&quot;</div><span className="text-[#888]">:</span> <span className="text-[#ff5f56]">&quot;high&quot;</span>
+              <div className="text-[#888]">&#125;</div>
             </div>
-            <div className={`text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 12 ? 'opacity-100' : 'opacity-0'}`}>
-              One intent in. Multiple systems connected. Context keeps flowing.
+            <div className={`mt-4 text-[#666] italic transition-opacity duration-300 ${visibleLinesRight >= 9 ? 'opacity-100' : 'opacity-0'}`}>
+              // Agent parses JSON, executes trades autonomously
             </div>
-            <div className={`mt-5 transition-opacity duration-300 ${visibleLinesRight >= 13 ? 'opacity-100' : 'opacity-0'}`}>
-              <span className="text-[#888]">Human:</span> <span className="text-[#e0e0e0]">&quot;Wait. It can actually do all of that?&quot;</span>
+            <div className={`mt-4 text-[#e0e0e0] transition-opacity duration-300 ${visibleLinesRight >= 10 ? 'opacity-100' : 'opacity-0'}`}>
+              No prompts. No chat. Just structured data flowing.
+            </div>
+            <div className={`mt-2 text-[#27c93f] transition-opacity duration-300 ${visibleLinesRight >= 11 ? 'opacity-100' : 'opacity-0'}`}>
+              → 659 markets • 24 tweets/hour • 4 endpoints • real-time
+            </div>
+            <div className={`mt-5 transition-opacity duration-300 ${visibleLinesRight >= 12 ? 'opacity-100' : 'opacity-0'}`}>
+              <span className="text-[#888]">Agent:</span> <span className="text-[#e0e0e0]">*executes trade on Kalshi*</span>
+            </div>
+            <div className={`text-[#27c93f] transition-opacity duration-300 ${visibleLinesRight >= 13 ? 'opacity-100' : 'opacity-0'}`}>
+              Position opened. Edge captured. Moving to next signal.
             </div>
           </div>
         </div>
