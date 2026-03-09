@@ -9,36 +9,36 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: 'Is Musashi built for humans or AI agents?',
-    answer: 'Both. Today, it\'s a Chrome extension that humans use to discover markets on Twitter. Tomorrow, it\'s the infrastructure layer for AI agents to turn social signals into trading opportunities for their users. We\'re building the bridge.',
+    question: 'What is Musashi?',
+    answer: 'Musashi is an AI intelligence service that automatically collects and analyzes tweets from 71 high-signal accounts every 2 minutes, matches them to 1000+ prediction markets, generates trading signals, and feeds structured data to AI trading bots via a polling API. The Chrome extension is just a monitoring dashboard (10% of the product) - the real product is the intelligence layer for automated trading.',
   },
   {
-    question: 'Is Musashi free?',
-    answer: 'Yes, completely free right now. No account required, no credit card, no tracking. In the future, we may introduce paid features for power users and agents, but the core extension will remain free.',
+    question: 'Who is Musashi built for?',
+    answer: 'Primarily for AI trading bots and developers building automated prediction market strategies. The Chrome extension lets humans monitor what the bots see, but the core product is the feed API that provides analyzed tweets with sentiment, urgency levels, confidence scores, and suggested trading actions.',
   },
   {
-    question: 'How do I use Musashi?',
-    answer: 'Install the Chrome extension and browse Twitter as usual. When you see tweets about events with active prediction markets, Musashi will show you live odds, prices, and volume—right inline with the tweet. Click any market card to trade.',
+    question: 'How does the automated feed work?',
+    answer: 'Every 2 minutes, Musashi collects tweets from 71 monitored accounts across 8 categories (crypto, politics, economics, tech, sports, geopolitics, finance, breaking news). Each tweet is analyzed using keyword matching, entity extraction, and sentiment analysis, then matched to relevant markets. Only tweets that match ≥1 market are stored in the feed for 48 hours.',
+  },
+  {
+    question: 'What data do AI agents get?',
+    answer: 'For each analyzed tweet: original author and text, 1-5 matched markets with confidence scores, sentiment (bullish/bearish/neutral), suggested action (YES/NO/HOLD with confidence + edge), urgency level (critical/high/medium/low), category, and reasoning. Everything your bot needs to make trading decisions.',
+  },
+  {
+    question: 'How do I integrate Musashi into my trading bot?',
+    answer: 'Use the Agent SDK (TypeScript/JavaScript) or call the REST API directly. Poll /api/feed every 30-60 seconds with filters (category, urgency, since timestamp). The SDK provides callback methods like onFeed() that handle polling automatically. Python, Node.js, and other language examples are in the docs.',
   },
   {
     question: 'What markets does Musashi cover?',
-    answer: '650+ active markets from Polymarket and Kalshi. Politics, crypto, economics, sports, tech, climate, and more. Markets update every 30 seconds and we add new ones daily.',
+    answer: '1000+ markets from Polymarket (500+) and Kalshi (400+). Politics, economics, crypto, technology, sports, geopolitics, climate, and entertainment. Markets update every 60 seconds via Polymarket CLOB API polling. We track markets with >$10k volume and add new ones daily.',
   },
   {
-    question: 'Does Musashi work on mobile?',
-    answer: 'Not yet. Musashi is a Chrome extension, so it only works on desktop browsers. Mobile support is on the roadmap, but we\'re focused on getting the desktop experience perfect first.',
+    question: 'Is Musashi free?',
+    answer: 'Yes, completely free. The feed API, Chrome extension, and SDK are all free with no rate limits currently. All infrastructure runs on free tiers (Vercel, Vercel KV, Twitter API). In the future, we may introduce premium features for high-frequency bots, but the core service will remain free.',
   },
   {
-    question: 'Can I build on top of Musashi?',
-    answer: 'Absolutely. We have a public API that lets you analyze text and get matching markets. Perfect for AI agents, trading bots, or custom integrations. Check our API docs to get started.',
-  },
-  {
-    question: 'Is my data private?',
-    answer: 'Yes. We don\'t collect or store personal data. No tracking, no analytics, no accounts. All processing happens locally in your browser. Read our full privacy policy for details.',
-  },
-  {
-    question: 'Do I need accounts on Polymarket or Kalshi?',
-    answer: 'Only if you want to trade. Musashi shows you the markets and prices, but when you click to trade, you\'ll be redirected to Polymarket or Kalshi where you\'ll need an account to place bets.',
+    question: 'What about arbitrage and market movers?',
+    answer: 'Musashi detects cross-platform arbitrage opportunities (e.g., same market trading at 63% on Polymarket, 70% on Kalshi = 7% spread) and tracks markets with significant price changes (>5% in 1h or 24h windows). Access via /api/markets/arbitrage and /api/markets/movers endpoints.',
   },
 ];
 
@@ -75,7 +75,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  650+ markets from Polymarket and Kalshi
+                  Automated feed from 71 high-signal accounts
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -83,7 +83,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  Price updates every 30 seconds
+                  1000+ markets (Polymarket + Kalshi)
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -91,7 +91,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  Inline market cards on Twitter/X
+                  AI sentiment analysis + trading signals
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -99,7 +99,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  No account or login required
+                  REST API + Agent SDK (TypeScript/JS)
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -107,7 +107,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  Complete privacy - no data collection
+                  Arbitrage detection + market movers
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -115,7 +115,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  API access for AI agents and bots
+                  No rate limits, no API keys required
                 </span>
               </li>
             </ul>
