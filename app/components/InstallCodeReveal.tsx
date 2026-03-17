@@ -1,23 +1,180 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 
 interface InstallCodeRevealProps {
   showCode: boolean;
 }
 
-export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) {
-  return (
-    <div className="absolute right-0 top-0 w-[860px] h-[860px]">
-      {/* Removed buttons, just the visual display */}
+type Platform = 'unix' | 'windows';
+type PackageManager = 'npm' | 'pnpm';
+type Section = 'install' | 'api-call';
 
-      {/* Musashi Image (default) */}
+interface CodeRow {
+  comment: string;
+  code: string;
+}
+
+interface EndpointCard {
+  method: 'GET' | 'POST';
+  title: string;
+  purpose: string;
+  parameters: string[];
+  example: string;
+}
+
+const PLATFORM_LABELS: Record<Platform, string> = {
+  unix: 'macOS/Linux',
+  windows: 'Windows',
+};
+
+const PACKAGE_LABELS: Record<PackageManager, string> = {
+  npm: 'npm',
+  pnpm: 'pnpm',
+};
+
+const SECTION_LABELS: Record<Section, string> = {
+  install: 'Install',
+  'api-call': 'API Call',
+};
+
+function getInstallRows(packageManager: PackageManager): CodeRow[] {
+  return [
+    {
+      comment: 'Clone the Musashi repository.',
+      code: 'git clone https://github.com/VittorioC13/Musashi.git',
+    },
+    {
+      comment: 'Enter the project directory.',
+      code: 'cd Musashi',
+    },
+    {
+      comment: `Install dependencies with ${PACKAGE_LABELS[packageManager]}.`,
+      code: packageManager === 'npm' ? 'npm install' : 'pnpm install',
+    },
+    {
+      comment: 'Run the production API contract test suite.',
+      code: 'npm run agent:test:api',
+    },
+  ];
+}
+
+function getEndpointCards(platform: Platform): EndpointCard[] {
+  const curlBin = platform === 'windows' ? 'curl.exe' : 'curl';
+  const baseUrl = 'https://musashi-api.vercel.app';
+  const analyzeExample =
+    platform === 'windows'
+      ? 'curl.exe -X POST "https://musashi-api.vercel.app/api/analyze-text" `\n  -H "Content-Type: application/json" `\n  -d "{\\"text\\":\\"Fed announces rate cut\\",\\"minConfidence\\":0.3,\\"maxResults\\":5}"'
+      : `curl -X POST "https://musashi-api.vercel.app/api/analyze-text" \\\n  -H "Content-Type: application/json" \\\n  -d '{"text":"Fed announces rate cut","minConfidence":0.3,"maxResults":5}'`;
+
+  return [
+    {
+      method: 'GET',
+      title: 'GET /api/health',
+      purpose: 'Check API health and upstream service status.',
+      parameters: ['None'],
+      example: `${curlBin} "${baseUrl}/api/health"`,
+    },
+    {
+      method: 'POST',
+      title: 'POST /api/analyze-text',
+      purpose: 'Analyze text and return matched markets, sentiment, and suggested action.',
+      parameters: [
+        'text (string, required)',
+        'minConfidence (number, optional, default: 0.3)',
+        'maxResults (number, optional, default: 5)',
+      ],
+      example: analyzeExample,
+    },
+    {
+      method: 'GET',
+      title: 'GET /api/markets/arbitrage',
+      purpose: 'Fetch live cross-platform arbitrage opportunities.',
+      parameters: [
+        'minSpread (number, optional, default: 0.03)',
+        'minConfidence (number, optional, default: 0.5)',
+        'limit (number, optional, default: 20, max: 100)',
+        'category (string, optional)',
+      ],
+      example: `${curlBin} "${baseUrl}/api/markets/arbitrage?minSpread=0.03&minConfidence=0.5&limit=10"`,
+    },
+    {
+      method: 'GET',
+      title: 'GET /api/markets/movers',
+      purpose: 'Fetch markets with significant price changes.',
+      parameters: [
+        'timeframe (string, optional: 1h | 6h | 24h)',
+        'minChange (number, optional, default: 0.05)',
+        'limit (number, optional, default: 20, max: 100)',
+        'category (string, optional)',
+      ],
+      example: `${curlBin} "${baseUrl}/api/markets/movers?timeframe=1h&minChange=0.05&limit=10"`,
+    },
+    {
+      method: 'GET',
+      title: 'GET /api/feed',
+      purpose: 'Retrieve recent analyzed feed items for agents.',
+      parameters: [
+        'limit (number, optional)',
+        'category (string, optional)',
+        'minUrgency (string, optional)',
+        'since (string, optional, ISO timestamp)',
+        'cursor (string, optional)',
+      ],
+      example: `${curlBin} "${baseUrl}/api/feed?limit=10&category=crypto&minUrgency=high"`,
+    },
+    {
+      method: 'GET',
+      title: 'GET /api/feed/stats',
+      purpose: 'Retrieve aggregate feed statistics for dashboards and monitoring.',
+      parameters: ['None'],
+      example: `${curlBin} "${baseUrl}/api/feed/stats"`,
+    },
+    {
+      method: 'GET',
+      title: 'GET /api/feed/accounts',
+      purpose: 'Retrieve tracked source accounts for the feed.',
+      parameters: ['None'],
+      example: `${curlBin} "${baseUrl}/api/feed/accounts"`,
+    },
+  ];
+}
+
+export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) {
+  const [platform, setPlatform] = useState<Platform>('unix');
+  const [packageManager, setPackageManager] = useState<PackageManager>('npm');
+  const [section, setSection] = useState<Section>('install');
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const installRows = useMemo(() => getInstallRows(packageManager), [packageManager]);
+  const endpointCards = useMemo(() => getEndpointCards(platform), [platform]);
+  const getEndpoints = useMemo(() => endpointCards.filter((card) => card.method === 'GET'), [endpointCards]);
+  const postEndpoints = useMemo(() => endpointCards.filter((card) => card.method === 'POST'), [endpointCards]);
+
+  useEffect(() => {
+    if (!copiedKey) return;
+
+    const timeout = window.setTimeout(() => setCopiedKey(null), 1400);
+    return () => window.clearTimeout(timeout);
+  }, [copiedKey]);
+
+  async function copyCode(code: string, key: string) {
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopiedKey(key);
+    } catch {
+      setCopiedKey(null);
+    }
+  }
+
+  return (
+    <div className="absolute right-0 top-0 h-[860px] w-[860px] max-[1200px]:relative max-[1200px]:h-auto max-[1200px]:w-full">
       <div
-        className={`absolute inset-0 transition-opacity duration-500 ${
-          showCode ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
+        className={`absolute inset-0 transition-all duration-700 max-[1200px]:relative max-[1200px]:min-h-[620px] ${showCode ? 'pointer-events-none scale-[0.985] opacity-0 blur-sm' : 'opacity-100'
+          }`}
       >
-        <div className="relative w-full h-full bg-black">
+        <div className="relative h-full w-full overflow-hidden bg-black">
           <Image
             src="/images/generated-1771830449125.png"
             alt="Miyamoto Musashi"
@@ -27,140 +184,246 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
             unoptimized
           />
 
-          {/* Floating Market Data Cards */}
-          <div className="absolute top-[120px] left-[60px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-            <div className="flex flex-col gap-1">
-              <span className="font-jetbrains text-[#666] text-[9px] font-medium">POLYMARKET</span>
-              <span className="font-jetbrains text-white text-[11px] font-semibold leading-tight">Trump wins 2024?</span>
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1">
-                  <span className="font-jetbrains text-[#00FF88] text-sm font-bold">YES</span>
-                  <span className="font-jetbrains text-white text-sm font-bold">89%</span>
-                </div>
-                <span className="font-jetbrains text-[#00FF88] text-[10px]">+12%</span>
-              </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(180deg,rgba(10,10,15,0.04),rgba(10,10,15,0.82))]" />
+
+          <div className="absolute left-[60px] top-[88px] max-w-[340px] border border-[#FFFFFF18] bg-[#0A0A0A]/84 px-5 py-4 backdrop-blur-xl transition-transform duration-700 hover:-translate-y-1">
+            <div className="mb-2 flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#00FF88]" />
+              <span className="font-jetbrains text-[10px] uppercase tracking-[0.24em] text-[#A7F3D0]">Musashi API</span>
             </div>
+            <p className="font-grotesk text-[22px] font-semibold leading-tight text-white">A cleaner quick start for customer onboarding.</p>
           </div>
 
-          <div className="absolute top-[80px] right-[140px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FF4444]/30 backdrop-blur-md">
-            <div className="flex items-center gap-2">
-              <svg className="w-3 h-3 fill-[#FF4444]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10l5 5 5-5z"/>
-              </svg>
-              <span className="font-jetbrains text-[#FF4444] text-lg font-bold">-23%</span>
-            </div>
+          <div className="absolute left-[92px] top-[252px] border border-[#FFFFFF18] bg-[#0A0A0A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
+            <span className="font-jetbrains text-[9px] text-[#6B7280]">DIRECT ACCESS</span>
+            <div className="mt-1 font-jetbrains text-xs text-white">Templates first, endpoints second</div>
           </div>
 
-          <div className="absolute top-[320px] left-[40px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-            <div className="flex flex-col gap-1">
-              <span className="font-jetbrains text-[#666] text-[9px]">24H VOL</span>
-              <span className="font-jetbrains text-white text-sm font-bold">$2.4M</span>
-            </div>
+          <div className="absolute right-[96px] top-[122px] border border-[#00FF88]/20 bg-[#06140E]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
+            <span className="font-jetbrains text-[10px] text-[#86EFAC]">Live API</span>
+            <div className="mt-1 font-jetbrains text-2xl font-bold text-white">24/7</div>
           </div>
 
-          <div className="absolute top-[280px] right-[80px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md max-w-[200px]">
-            <div className="flex flex-col gap-1">
-              <span className="font-jetbrains text-[#666] text-[9px] font-medium">KALSHI</span>
-              <span className="font-jetbrains text-white text-[11px] font-semibold leading-tight">BTC above $100k?</span>
-              <div className="flex items-center gap-2">
-                <span className="font-jetbrains text-[#00FF88] text-sm font-bold">67%</span>
-                <div className="flex-1 h-1 bg-[#222] rounded-full overflow-hidden">
-                  <div className="h-full w-[67%] bg-[#00FF88]" />
-                </div>
-              </div>
-            </div>
+          <div className="absolute bottom-[168px] left-[118px] border border-[#FFFFFF15] bg-[#0A0A0A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
+            <span className="font-jetbrains text-[10px] text-[#6B7280]">FOR CUSTOMERS</span>
+            <div className="mt-1 font-jetbrains text-xs font-semibold text-white">Repo install or direct REST calls</div>
           </div>
 
-          <div className="absolute bottom-[180px] left-[90px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-            <span className="font-jetbrains text-white text-xs font-bold">900+ MARKETS</span>
+          <div className="absolute bottom-[120px] right-[116px] border border-[#F59E0B]/20 bg-[#17120A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
+            <span className="font-jetbrains text-[10px] text-[#FDE68A]">OUTPUT</span>
+            <div className="mt-1 font-jetbrains text-sm font-bold text-white">Signals in minutes</div>
           </div>
-
-          <div className="absolute bottom-[140px] right-[120px] px-4 py-3 bg-[#0A0A0A]/90 border border-[#00FF88]/30 backdrop-blur-md">
-            <div className="flex items-center gap-2">
-              <svg className="w-4 h-4 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-              </svg>
-              <span className="font-jetbrains text-[#00FF88] text-xs font-bold">TRENDING</span>
-            </div>
-          </div>
-
-          <div className="absolute top-[480px] right-[50px] px-3 py-2 bg-[#0A0A0A]/90 border border-[#FFFFFF15] backdrop-blur-md">
-            <div className="flex flex-col items-end gap-1">
-              <span className="font-jetbrains text-[#00FF88] text-xs">YES 34¢</span>
-              <span className="font-jetbrains text-[#FF4444] text-xs">NO 66¢</span>
-            </div>
-          </div>
-
-          <svg className="absolute inset-0 w-full h-full opacity-20" style={{ mixBlendMode: 'screen' }}>
-            <line x1="180" y1="150" x2="320" y2="280" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
-            <line x1="140" y1="340" x2="280" y2="420" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
-            <line x1="720" y1="110" x2="640" y2="310" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="4 4" />
-          </svg>
         </div>
       </div>
 
-      {/* Code Block (shown on Install click) */}
       <div
-        className={`absolute inset-0 transition-opacity duration-500 ${
-          showCode ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`absolute inset-0 transition-all duration-700 max-[1200px]:relative ${showCode ? 'opacity-100' : 'pointer-events-none translate-x-8 opacity-0'
+          }`}
       >
-        <div className="w-full h-full bg-[#0a0a0a] p-12 overflow-auto">
-          {/* API Endpoints Table */}
-          <div className="mb-8">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-[#333]">
-                  <th className="font-jetbrains text-white text-sm font-bold pb-3">Endpoint</th>
-                  <th className="font-jetbrains text-white text-sm font-bold pb-3">Expected Response Time</th>
-                  <th className="font-jetbrains text-white text-sm font-bold pb-3">Notes</th>
-                </tr>
-              </thead>
-              <tbody className="font-jetbrains text-[13px]">
-                <tr className="border-b border-[#222]">
-                  <td className="py-3 text-[#ddd]">/api/health</td>
-                  <td className="py-3 text-[#ddd]">&lt; 500ms</td>
-                  <td className="py-3 text-[#888]">Cold start: ~2s</td>
-                </tr>
-                <tr className="border-b border-[#222]">
-                  <td className="py-3 text-[#ddd]">/api/analyze-text</td>
-                  <td className="py-3 text-[#ddd]">&lt; 200ms</td>
-                  <td className="py-3 text-[#888]">With cached markets</td>
-                </tr>
-                <tr className="border-b border-[#222]">
-                  <td className="py-3 text-[#ddd]">/api/markets/arbitrage</td>
-                  <td className="py-3 text-[#ddd]">&lt; 1s</td>
-                  <td className="py-3 text-[#888]">First request slower (cache miss)</td>
-                </tr>
-                <tr className="border-b border-[#222]">
-                  <td className="py-3 text-[#ddd]">/api/markets/movers</td>
-                  <td className="py-3 text-[#ddd]">&lt; 500ms</td>
-                  <td className="py-3 text-[#888]">Requires price history</td>
-                </tr>
-                <tr className="border-b border-[#222]">
-                  <td className="py-3 text-[#ddd]">/api/feed</td>
-                  <td className="py-3 text-[#ddd]">&lt; 200ms</td>
-                  <td className="py-3 text-[#888]">Returns from KV</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div className="relative h-full w-full overflow-hidden border-l border-[#FFFFFF12] bg-[linear-gradient(180deg,#090B12_0%,#0B1017_100%)] p-8 max-[1200px]:min-h-[720px] max-[1200px]:border-l-0 max-[1200px]:border-t max-[1200px]:p-6">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,255,136,0.10),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(245,158,11,0.10),transparent_30%)]" />
 
-          {/* How to Test */}
-          <div>
-            <h3 className="font-jetbrains text-white text-base font-bold mb-4">How to Test:</h3>
-            <div className="bg-[#111] border border-[#222] rounded p-4">
-              <pre className="font-mono text-[13px] leading-relaxed">
-                <code>
-                  <div className="text-[#6a9955]"># Add -w to see response time</div>
-                  <div className="text-[#ddd]">curl -w <span className="text-[#ce9178]">"\nTime: %{'{'}time_total{'}'}\n"</span> <span className="text-[#ce9178]">"https://musashi-api.vercel.app/api/health"</span></div>
-                  <div className="mt-3"></div>
-                  <div className="text-[#ddd]">curl -i https://musashi-api.vercel.app/api/health</div>
-                  <div className="text-[#ddd]">curl -i <span className="text-[#ce9178]">"https://musashi-api.vercel.app/api/feed?limit=5"</span></div>
-                  <div className="text-[#ddd]">curl -i https://musashi-api.vercel.app/api/feed/stats</div>
-                  <div className="text-[#ddd]">curl -i <span className="text-[#ce9178]">"https://musashi-api.vercel.app/api/markets/arbitrage?minSpread=0.05"</span></div>
-                </code>
-              </pre>
+          <div className="relative flex h-full flex-col gap-6">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#FFFFFF14] bg-[#FFFFFF06] px-3 py-1">
+                <span className="h-2 w-2 rounded-full bg-[#00FF88]" />
+                <span className="font-jetbrains text-[10px] uppercase tracking-[0.24em] text-[#C4F8DE]">API Quick Start</span>
+              </div>
+              <h3 className="font-grotesk text-[40px] font-bold tracking-[-0.05em] text-white">Connect Agents to Musashi API</h3>
+            </div>
+
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[32px] border border-[#FFFFFF12] bg-[#060A12]/92 shadow-[0_28px_120px_rgba(0,0,0,0.42)]">
+              <div className="flex flex-wrap items-center gap-3 border-b border-[#FFFFFF0F] px-5 py-4">
+                <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+                <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+                <span className="h-3 w-3 rounded-full bg-[#28C840]" />
+                <div className="ml-2 flex flex-wrap items-center gap-3">
+                  <div className="flex rounded-full border border-[#FFFFFF12] bg-[#060A12] p-1">
+                    {(['install', 'api-call'] as Section[]).map((item) => {
+                      const isActive = item === section;
+
+                      return (
+                        <button
+                          key={item}
+                          type="button"
+                          onClick={() => setSection(item)}
+                          className={`rounded-full px-4 py-2 font-jetbrains text-[12px] font-medium transition-all duration-300 ${isActive
+                            ? 'bg-white text-[#0A0A0F] shadow-[0_10px_30px_rgba(255,255,255,0.08)]'
+                            : 'text-[#8C99AD] hover:text-white'
+                            }`}
+                        >
+                          {SECTION_LABELS[item]}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  <div className="flex rounded-full border border-[#FFFFFF12] bg-[#060A12] p-1">
+                    {(['unix', 'windows'] as Platform[]).map((item) => {
+                      const isActive = item === platform;
+
+                      return (
+                        <button
+                          key={item}
+                          type="button"
+                          onClick={() => setPlatform(item)}
+                          className={`rounded-full px-4 py-2 font-jetbrains text-[12px] font-medium transition-all duration-300 ${isActive
+                            ? 'bg-[#00FF88]/14 text-white shadow-[0_0_18px_rgba(0,255,136,0.16)]'
+                            : 'text-[#8C99AD] hover:text-white'
+                            }`}
+                        >
+                          {PLATFORM_LABELS[item]}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {section === 'install' ? (
+                    <div className="flex rounded-full border border-[#FFFFFF12] bg-[#060A12] p-1">
+                      {(['npm', 'pnpm'] as PackageManager[]).map((item) => {
+                        const isActive = item === packageManager;
+
+                        return (
+                          <button
+                            key={item}
+                            type="button"
+                            onClick={() => setPackageManager(item)}
+                            className={`rounded-full px-4 py-2 font-jetbrains text-[12px] font-medium transition-all duration-300 ${isActive
+                              ? 'bg-[#F59E0B]/14 text-white shadow-[0_0_18px_rgba(245,158,11,0.12)]'
+                              : 'text-[#8C99AD] hover:text-white'
+                              }`}
+                          >
+                            {PACKAGE_LABELS[item]}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+
+              {section === 'install' ? (
+                <div className="space-y-2.5 px-5 py-4">
+                  {installRows.map((row, index) => {
+                    const rowKey = `install-${index}`;
+
+                    return (
+                      <div
+                        key={rowKey}
+                        className="rounded-[24px] border border-[#FFFFFF08] bg-[linear-gradient(180deg,#05080E_0%,#04070C_100%)] px-4 py-3 transition-all duration-300 hover:border-[#FFFFFF16] hover:bg-[linear-gradient(180deg,#07101A_0%,#050912_100%)]"
+                      >
+                        <div className="mb-2 font-jetbrains text-[11px] leading-5 text-[#7B889D]">{row.comment}</div>
+                        <div className="flex items-center gap-3 rounded-2xl border border-[#FFFFFF08] bg-[#03070D] px-4 py-2.5">
+                          <span className="font-jetbrains text-[13px] text-[#E5E7EB]">$</span>
+                          <code className="flex-1 overflow-x-auto whitespace-pre-wrap font-jetbrains text-[13px] leading-6 text-[#E5E7EB]">
+                            {row.code}
+                          </code>
+                          <button
+                            type="button"
+                            onClick={() => copyCode(row.code, rowKey)}
+                            className="rounded-xl border border-[#FFFFFF12] bg-[#FFFFFF06] px-3 py-2 font-jetbrains text-[11px] font-semibold text-white transition-all duration-300 hover:border-[#FFFFFF20] hover:bg-[#FFFFFF10]"
+                          >
+                            {copiedKey === rowKey ? 'Copied' : 'Copy'}
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="min-h-0 flex-1 overflow-y-auto px-4 py-4">
+                  <div className="space-y-4 rounded-[24px] border border-[#FFFFFF08] bg-[linear-gradient(180deg,#05080E_0%,#04070C_100%)] px-4 py-4">
+
+                    <div className="space-y-3">
+                      {[getEndpoints[0], postEndpoints[0]].filter(Boolean).map((card, index) => {
+                        const cardKey = `endpoint-${index}`;
+                        const commandLabel = card!.method === 'GET' ? 'quick health check' : 'analyze text';
+
+                        return (
+                          <div key={cardKey} className="rounded-[20px] border border-[#FFFFFF08] bg-[#03070D] px-4 py-3">
+                            <div className="flex items-center justify-between gap-3">
+                              <div className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">{commandLabel}</div>
+                              <span
+                                className={`rounded-full border px-2.5 py-1 font-jetbrains text-[10px] font-semibold ${card!.method === 'GET'
+                                  ? 'border-[#00FF88]/18 bg-[#00FF88]/10 text-[#A7F3D0]'
+                                  : 'border-[#F59E0B]/18 bg-[#F59E0B]/10 text-[#FDE68A]'
+                                  }`}
+                              >
+                                {card!.method}
+                              </span>
+                            </div>
+
+                            <div className="mt-1.5 flex items-start gap-2 rounded-[18px] border border-[#FFFFFF08] bg-[#02050A] px-3 py-2">
+                              <span className="pt-[2px] font-jetbrains text-[12px] leading-5 text-[#E5E7EB]">$</span>
+                              <pre className="min-w-0 flex-1 overflow-x-auto whitespace-pre-wrap font-jetbrains text-[12px] leading-5 text-[#E5E7EB]">
+                                <code>{card!.example}</code>
+                              </pre>
+                              <button
+                                type="button"
+                                onClick={() => copyCode(card!.example, cardKey)}
+                                className="self-start rounded-xl border border-[#FFFFFF12] bg-[#FFFFFF06] px-2.5 py-1.5 font-jetbrains text-[10.5px] font-semibold text-white transition-all duration-300 hover:border-[#FFFFFF20] hover:bg-[#FFFFFF10]"
+                              >
+                                {copiedKey === cardKey ? 'Copied' : 'Copy'}
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="rounded-[20px] border border-[#FFFFFF08] bg-[#03070D]">
+                      <div className="border-b border-[#FFFFFF08] px-4 py-4">
+                        <div className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">Production API & Staging API</div>
+                        <div className="mt-2 font-jetbrains text-[13px] font-semibold text-white">
+                          https://musashi-api.vercel.app
+                        </div>
+                      </div>
+
+                      <div className="overflow-x-auto">
+                        <table className="min-w-full border-collapse">
+                          <thead>
+                            <tr className="border-b border-[#FFFFFF08]">
+                              <th className="px-4 py-3 text-left font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">Method</th>
+                              <th className="px-4 py-3 text-left font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">API Call</th>
+                              <th className="px-4 py-3 text-left font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">Parameter</th>
+                              <th className="px-4 py-3 text-left font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">Purpose</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {endpointCards.map((card, index) => {
+                              const rowKey = `endpoint-table-${index}`;
+
+                              return (
+                                <tr key={rowKey} className="border-b border-[#FFFFFF06] align-top last:border-b-0">
+                                  <td className="px-4 py-3">
+                                    <span
+                                      className={`inline-flex rounded-full border px-2.5 py-1 font-jetbrains text-[10px] font-semibold ${card.method === 'GET'
+                                        ? 'border-[#00FF88]/18 bg-[#00FF88]/10 text-[#A7F3D0]'
+                                        : 'border-[#F59E0B]/18 bg-[#F59E0B]/10 text-[#FDE68A]'
+                                        }`}
+                                    >
+                                      {card.method}
+                                    </span>
+                                  </td>
+                                  <td className="px-4 py-3 font-jetbrains text-[11.5px] leading-5 text-white">{card.title.replace(`${card.method} `, '')}</td>
+                                  <td className="px-4 py-3 font-jetbrains text-[11px] leading-5 text-[#C4CCD8]">
+                                    {card.parameters.map((parameter) => (
+                                      <div key={`${rowKey}-${parameter}`}>{parameter}</div>
+                                    ))}
+                                  </td>
+                                  <td className="px-4 py-3 font-jetbrains text-[11px] leading-5 text-[#C4CCD8]">{card.purpose}</td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

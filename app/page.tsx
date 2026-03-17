@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from "next/image";
 import TerminalDemo from "./TerminalDemo";
 import SmoothScrollLink from "./components/SmoothScrollLink";
 import FAQ from "./components/FAQ";
