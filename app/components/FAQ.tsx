@@ -50,16 +50,16 @@ export default function FAQ() {
   };
 
   return (
-    <section className="flex flex-col lg:flex-row items-start gap-12 w-full px-[80px] lg:px-[120px] py-[100px] bg-[var(--bg-secondary)] border-t border-[var(--border-primary)]">
+    <section className="flex w-full flex-col items-start gap-10 border-t border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-16 sm:px-6 lg:flex-row lg:gap-12 lg:px-[120px] lg:py-[100px]">
       {/* Left: Pricing Card */}
       <div className="w-full lg:w-[400px] flex-shrink-0">
-        <div className="sticky top-8 flex flex-col gap-8 p-8 bg-[var(--bg-tertiary)] border border-[var(--border-primary)] rounded-lg">
+        <div className="flex flex-col gap-6 rounded-lg border border-[var(--border-primary)] bg-[var(--bg-tertiary)] p-6 sm:p-8 lg:sticky lg:top-8 lg:gap-8">
           {/* Investment */}
-          <div className="flex flex-col items-center justify-center gap-3 pb-6 border-b border-[var(--border-primary)] min-h-[140px]">
+          <div className="flex min-h-[120px] flex-col items-center justify-center gap-3 border-b border-[var(--border-primary)] pb-6 sm:min-h-[140px]">
             <span className="font-jetbrains text-[var(--text-tertiary)] text-[11px] font-bold tracking-[2px] uppercase">
               Your Investment
             </span>
-            <span className="font-grotesk text-[var(--text-primary)] text-[64px] font-bold tracking-[-2px] leading-none">
+            <span className="font-grotesk text-[clamp(2.75rem,12vw,4rem)] font-bold leading-none tracking-[-2px] text-[var(--text-primary)]">
               Free
             </span>
           </div>
@@ -126,10 +126,10 @@ export default function FAQ() {
       {/* Right: FAQ Accordion */}
       <div className="flex-1 flex flex-col gap-8">
         <div className="flex flex-col gap-3">
-          <h2 className="font-grotesk text-[var(--text-primary)] text-[42px] font-bold tracking-[-1px]">
+          <h2 className="font-grotesk text-[clamp(1.9rem,8.8vw,2.8rem)] font-bold tracking-[-1.5px] text-[var(--text-primary)]">
             Common Questions
           </h2>
-          <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal">
+          <p className="max-w-[28rem] font-jetbrains text-[13px] font-normal leading-[1.7] text-[var(--text-secondary)] sm:text-[14px]">
             Everything you need to know about Musashi
           </p>
         </div>
@@ -142,13 +142,13 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="w-full flex items-center justify-between py-6 text-left hover:opacity-80 transition-opacity"
+                className="flex w-full items-start justify-between gap-4 py-5 text-left transition-opacity hover:opacity-80 sm:items-center sm:py-6"
               >
-                <span className="font-grotesk text-[var(--text-primary)] text-lg font-medium pr-8">
+                <span className="pr-4 font-grotesk text-[clamp(1.05rem,5.6vw,1.6rem)] font-medium leading-[1.35] text-[var(--text-primary)] sm:pr-8">
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-5 h-5 fill-[var(--text-primary)] flex-shrink-0 transition-transform duration-200 ${
+                  className={`mt-1 h-5 w-5 flex-shrink-0 fill-[var(--text-primary)] transition-transform duration-200 sm:mt-0 ${
                     openIndex === index ? 'rotate-45' : ''
                   }`}
                   viewBox="0 0 24 24"
@@ -162,7 +162,7 @@ export default function FAQ() {
                   openIndex === index ? 'max-h-96 pb-6' : 'max-h-0'
                 }`}
               >
-                <p className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.7] pr-12">
+                <p className="pr-2 font-jetbrains text-[13px] font-normal leading-[1.75] text-[var(--text-secondary)] sm:pr-12 sm:text-[14px]">
                   {faq.answer}
                 </p>
               </div>
