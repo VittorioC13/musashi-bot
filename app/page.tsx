@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import TerminalDemo from "./TerminalDemo";
 import SmoothScrollLink from "./components/SmoothScrollLink";
 import FAQ from "./components/FAQ";
@@ -25,7 +25,30 @@ const mobileInstallSteps = [
 export default function Home() {
   const [showInstallCode, setShowInstallCode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [pendingInstallScroll, setPendingInstallScroll] = useState(false);
   const isCompactLayout = useCompactLayout();
+  const installSectionRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!pendingInstallScroll) return;
+
+    const frameId = window.requestAnimationFrame(() => {
+      installSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setPendingInstallScroll(false);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [pendingInstallScroll]);
+
+  const handleInstallClick = () => {
+    if (isCompactLayout) {
+      setMobileMenuOpen(false);
+      setPendingInstallScroll(true);
+      return;
+    }
+
+    setShowInstallCode((current) => !current);
+  };
 
   return (
     <div className="flex flex-col w-full bg-[var(--bg-primary)]">
@@ -41,11 +64,11 @@ export default function Home() {
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
-            onClick={() => setShowInstallCode((current) => !current)}
+            onClick={handleInstallClick}
             className="border border-[#FFFFFF40] bg-transparent px-4 py-[10px] transition-colors hover:bg-[var(--overlay-light)] sm:px-5"
           >
             <span className="font-jetbrains text-xs font-bold text-[var(--text-primary)]">
-              {showInstallCode ? 'Close' : 'Install'}
+              {isCompactLayout ? 'Install' : showInstallCode ? 'Close' : 'Install'}
             </span>
           </button>
           <button
@@ -92,10 +115,7 @@ export default function Home() {
             <div className="mt-5 grid grid-cols-2 gap-3">
               <button
                 type="button"
-                onClick={() => {
-                  setShowInstallCode((current) => !current);
-                  setMobileMenuOpen(false);
-                }}
+                onClick={handleInstallClick}
                 className="bg-white px-4 py-4 text-center"
               >
                 <span className="font-jetbrains text-[11px] font-bold text-[#0A0A0F]">SETUP</span>
@@ -133,11 +153,11 @@ export default function Home() {
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
               <button
                 type="button"
-                onClick={() => setShowInstallCode((current) => !current)}
+                onClick={handleInstallClick}
                 className="bg-[var(--text-primary)] px-8 py-[14px] text-center transition-opacity hover:opacity-90"
               >
                 <span className="font-jetbrains text-xs font-bold text-[var(--bg-primary)]">
-                  {showInstallCode ? 'Hide Setup' : 'Install'}
+                  {isCompactLayout ? 'Install' : showInstallCode ? 'Hide Setup' : 'Install'}
                 </span>
               </button>
               <SmoothScrollLink targetId="see-the-difference" className="border border-[var(--border-lighter)] bg-[var(--overlay-light)] px-8 py-[14px] text-center transition-colors hover:bg-[var(--overlay-lighter)]">
@@ -172,43 +192,38 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={`rounded-[28px] border border-[#FFFFFF14] bg-[#060A12]/88 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.34)] sm:p-5 ${isCompactLayout ? '' : 'lg:hidden'}`}>
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <span className="font-jetbrains text-[10px] uppercase tracking-[0.2em] text-[#8C99AD]">Mobile Layout</span>
-                <h2 className="mt-2 font-grotesk text-[24px] font-semibold leading-none text-white sm:text-[26px]">
-                  No hero portrait on phone.
-                </h2>
-              </div>
-              <span className="rounded-full border border-[#00FF88]/20 bg-[#00FF88]/10 px-3 py-1 font-jetbrains text-[10px] font-semibold uppercase tracking-[0.16em] text-[#A7F3D0]">
-                mobile first
-              </span>
+          <div
+            ref={installSectionRef}
+            className={`rounded-[28px] border border-[#FFFFFF14] bg-[#060A12]/88 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.34)] sm:p-5 ${isCompactLayout ? '' : 'lg:hidden'}`}
+          >
+            <div>
+              <h2 className="font-grotesk text-[24px] font-semibold leading-none text-white sm:text-[26px]">
+                Install Musashi
+              </h2>
             </div>
             <p className="mt-4 font-jetbrains text-[13px] leading-[1.7] text-[var(--text-secondary)]">
-              On smaller screens the homepage now removes the character image and prioritizes setup, API entry points, and product stats.
+              Clone the repo, install dependencies, then run <code className="font-jetbrains text-white">npm run agent</code>.
             </p>
 
-            {showInstallCode ? (
-              <div className="mt-5 space-y-3 border-t border-[#FFFFFF10] pt-5">
-                {mobileInstallSteps.map((step) => (
-                  <div key={step.label} className="rounded-2xl border border-[#FFFFFF10] bg-[#03070D] px-4 py-3">
-                    <div className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">{step.label}</div>
-                    <code className="mt-2 block whitespace-pre-wrap font-jetbrains text-[12px] leading-5 text-white">
-                      {step.value}
-                    </code>
-                  </div>
-                ))}
-
-                <div className="flex flex-col gap-3 sm:flex-row">
-                  <a href="/ai" className="border border-[#FFFFFF18] bg-[#FFFFFF08] px-4 py-3 text-center transition-colors hover:bg-[#FFFFFF10]">
-                    <span className="font-jetbrains text-[11px] font-bold text-white">Open API Docs</span>
-                  </a>
-                  <a href="/install" className="border border-[#FFFFFF18] bg-transparent px-4 py-3 text-center transition-colors hover:bg-[#FFFFFF08]">
-                    <span className="font-jetbrains text-[11px] font-bold text-white">Install Page</span>
-                  </a>
+            <div className="mt-5 space-y-3 border-t border-[#FFFFFF10] pt-5">
+              {mobileInstallSteps.map((step) => (
+                <div key={step.label} className="rounded-2xl border border-[#FFFFFF10] bg-[#03070D] px-4 py-3">
+                  <div className="font-jetbrains text-[10px] uppercase tracking-[0.18em] text-[#6E7D93]">{step.label}</div>
+                  <code className="mt-2 block whitespace-pre-wrap font-jetbrains text-[12px] leading-5 text-white">
+                    {step.value}
+                  </code>
                 </div>
+              ))}
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a href="/ai" className="border border-[#FFFFFF18] bg-[#FFFFFF08] px-4 py-3 text-center transition-colors hover:bg-[#FFFFFF10]">
+                  <span className="font-jetbrains text-[11px] font-bold text-white">Open API Docs</span>
+                </a>
+                <a href="/install" className="border border-[#FFFFFF18] bg-transparent px-4 py-3 text-center transition-colors hover:bg-[#FFFFFF08]">
+                  <span className="font-jetbrains text-[11px] font-bold text-white">Install Page</span>
+                </a>
               </div>
-            ) : null}
+            </div>
           </div>
         </div>
 
