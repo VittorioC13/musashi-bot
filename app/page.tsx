@@ -171,7 +171,7 @@ export default function Home() {
 
           <div className={`flex flex-wrap gap-2 ${isCompactLayout ? '' : 'lg:hidden'}`}>
             <span className="border border-[#FFFFFF14] bg-[#FFFFFF06] px-3 py-2 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#C4CCD8]">
-              659 markets live
+              900+ markets live
             </span>
             <span className="border border-[#FFFFFF14] bg-[#FFFFFF06] px-3 py-2 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[#C4CCD8]">
               71 tracked accounts

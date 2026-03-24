@@ -10,7 +10,7 @@ type FAQItem = {
 const faqs: FAQItem[] = [
   {
     question: 'What is Musashi?',
-    answer: 'Musashi is an AI intelligence service that automatically collects and analyzes tweets from 71 high-signal accounts every 2 minutes, matches them to 1000+ prediction markets, generates trading signals, and feeds structured data to AI trading bots via a polling API. The Chrome extension is just a monitoring dashboard (10% of the product) - the real product is the intelligence layer for automated trading.',
+    answer: 'Musashi is an AI intelligence service that automatically collects and analyzes tweets from 71 high-signal accounts every 2 minutes, matches them to 900+ prediction markets, generates trading signals, and feeds structured data to AI trading bots via a polling API. The Chrome extension is just a monitoring dashboard (10% of the product) - the real product is the intelligence layer for automated trading.',
   },
   {
     question: 'Who is Musashi built for?',
@@ -26,15 +26,15 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'How do I integrate Musashi into my trading bot?',
-    answer: 'Use the Agent SDK (TypeScript/JavaScript) or call the REST API directly. Poll /api/feed every 30-60 seconds with filters (category, urgency, since timestamp). The SDK provides callback methods like onFeed() that handle polling automatically. Python, Node.js, and other language examples are in the docs.',
+    answer: 'Use the Agent SDK (TypeScript/JavaScript) or call the REST API directly. Poll /api/feed every 20-30 seconds with filters (category, urgency, since timestamp) for optimal freshness. The SDK provides callback methods like onFeed() that handle polling automatically. Python, Node.js, and other language examples are in the docs.',
   },
   {
     question: 'What markets does Musashi cover?',
-    answer: '1000+ markets from Polymarket (500+) and Kalshi (400+). Politics, economics, crypto, technology, sports, geopolitics, climate, and entertainment. Markets update every 60 seconds via Polymarket CLOB API polling. We track markets with >$10k volume and add new ones daily.',
+    answer: '900+ markets from Polymarket (500) and Kalshi (400), sorted by volume. Politics, economics, crypto, technology, sports, geopolitics, climate, and entertainment. Markets update every 15-20 seconds for real-time trading decisions. Coverage includes all major markets across categories with fresh pricing data.',
   },
   {
     question: 'Is Musashi free?',
-    answer: 'Yes, completely free. The feed API, Chrome extension, and SDK are all free with no rate limits currently. All infrastructure runs on free tiers (Vercel, Vercel KV, Twitter API). In the future, we may introduce premium features for high-frequency bots, but the core service will remain free.',
+    answer: 'Yes, completely free during beta. The feed API, Chrome extension, and SDK are all free with no rate limits currently. All infrastructure runs on free tiers (Vercel, Vercel KV, Twitter API). Fair usage limits may be added in the future to ensure service reliability, but the core service will remain free for reasonable bot usage.',
   },
   {
     question: 'What about arbitrage and market movers?',
@@ -83,7 +83,7 @@ export default function FAQ() {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
                 <span className="font-jetbrains text-[var(--text-secondary)] text-[13px] font-normal leading-[1.6]">
-                  1000+ markets (Polymarket + Kalshi)
+                  900+ markets (Polymarket + Kalshi)
                 </span>
               </li>
               <li className="flex items-start gap-3">
