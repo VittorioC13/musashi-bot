@@ -111,7 +111,7 @@ export default function Mission() {
 
               <div className="bg-[var(--bg-secondary)] border-l-4 border-[#00FF88] p-5">
                 <h3 className="font-jetbrains text-[var(--text-primary)] text-[16px] font-bold mb-2">
-                  3. Terminal > Browser
+                  3. Terminal &gt; Browser
                 </h3>
                 <p className="font-jetbrains text-[var(--text-secondary)] text-[14px] leading-[1.7]">
                   The best interface for an AI trading bot isn't a web dashboard—it's a terminal. Run <code className="bg-[var(--bg-primary)] px-2 py-1 text-[#00FF88]">npm run agent</code> and get a live CLI showing arbitrage opportunities, market movers, and tweet analysis as they happen. No mouse, no clicks, just keyboard-driven automation.
