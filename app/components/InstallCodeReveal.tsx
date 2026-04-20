@@ -201,7 +201,7 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
         className={`absolute inset-0 transition-all duration-700 max-[1200px]:relative max-[1200px]:min-h-[620px] ${showCode ? 'pointer-events-none scale-[0.985] opacity-0 blur-sm' : 'opacity-100'
           }`}
       >
-        <div className="relative h-full w-full overflow-hidden bg-black">
+        <div className="relative h-full w-full overflow-hidden bg-[#060A12]">
           <Image
             src="/images/generated-1771830449125.png"
             alt="Miyamoto Musashi"
@@ -211,9 +211,11 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
             unoptimized
           />
 
+          <div className="absolute inset-y-0 left-0 w-[38%] bg-[linear-gradient(90deg,#060A12_0%,rgba(6,10,18,0.92)_42%,rgba(6,10,18,0.28)_76%,transparent_100%)]" />
+
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_28%,rgba(255,255,255,0.14),transparent_24%),linear-gradient(180deg,rgba(10,10,15,0.04),rgba(10,10,15,0.82))]" />
 
-          <div className="absolute left-[60px] top-[88px] max-w-[340px] border border-[#FFFFFF18] bg-[#0A0A0A]/84 px-5 py-4 backdrop-blur-xl transition-transform duration-700 hover:-translate-y-1">
+          <div className="absolute left-[60px] top-[88px] max-w-[340px] border border-[#FFFFFF18] bg-[#060A12]/90 px-5 py-4 backdrop-blur-xl transition-transform duration-700 hover:-translate-y-1">
             <div className="mb-2 flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-[#00FF88]" />
               <span className="font-jetbrains text-[10px] uppercase tracking-[0.24em] text-[#A7F3D0]">Musashi API</span>
@@ -221,22 +223,22 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
             <p className="font-grotesk text-[22px] font-semibold leading-tight text-white">A cleaner quick start for customer onboarding.</p>
           </div>
 
-          <div className="absolute left-[92px] top-[252px] border border-[#FFFFFF18] bg-[#0A0A0A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
+          <div className="absolute left-[92px] top-[252px] border border-[#FFFFFF18] bg-[#060A12]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
             <span className="font-jetbrains text-[9px] text-[#6B7280]">DIRECT ACCESS</span>
             <div className="mt-1 font-jetbrains text-xs text-white">Templates first, endpoints second</div>
           </div>
 
-          <div className="absolute right-[96px] top-[122px] border border-[#00FF88]/20 bg-[#06140E]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
+          <div className="absolute right-[96px] top-[122px] border border-[#00FF88]/20 bg-[#060A12]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
             <span className="font-jetbrains text-[10px] text-[#86EFAC]">Live API</span>
             <div className="mt-1 font-jetbrains text-2xl font-bold text-white">24/7</div>
           </div>
 
-          <div className="absolute bottom-[168px] left-[118px] border border-[#FFFFFF15] bg-[#0A0A0A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
+          <div className="absolute bottom-[168px] left-[118px] border border-[#FFFFFF15] bg-[#060A12]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:-translate-y-1">
             <span className="font-jetbrains text-[10px] text-[#6B7280]">FOR CUSTOMERS</span>
             <div className="mt-1 font-jetbrains text-xs font-semibold text-white">Repo install or direct REST calls</div>
           </div>
 
-          <div className="absolute bottom-[120px] right-[116px] border border-[#F59E0B]/20 bg-[#17120A]/88 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
+          <div className="absolute bottom-[120px] right-[116px] border border-[#F59E0B]/20 bg-[#060A12]/90 px-4 py-3 backdrop-blur-md transition-all duration-700 hover:translate-y-1">
             <span className="font-jetbrains text-[10px] text-[#FDE68A]">OUTPUT</span>
             <div className="mt-1 font-jetbrains text-sm font-bold text-white">Signals in minutes</div>
           </div>
@@ -259,7 +261,7 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
               <h3 className="font-grotesk text-[40px] font-bold tracking-[-0.05em] text-white">Connect Agents to Musashi API</h3>
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[32px] border border-[#FFFFFF12] bg-[#060A12]/92 shadow-[0_28px_120px_rgba(0,0,0,0.42)]">
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[32px] border border-[#FFFFFF12] bg-[#060A12]/95 shadow-[0_28px_120px_rgba(0,0,0,0.42)]">
               <div className="flex flex-wrap items-center gap-3 border-b border-[#FFFFFF0F] px-5 py-4">
                 <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
                 <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
@@ -275,7 +277,7 @@ export default function InstallCodeReveal({ showCode }: InstallCodeRevealProps) 
                           type="button"
                           onClick={() => setSection(item)}
                           className={`rounded-full px-4 py-2 font-jetbrains text-[12px] font-medium transition-all duration-300 ${isActive
-                            ? 'bg-white text-[#0A0A0F] shadow-[0_10px_30px_rgba(255,255,255,0.08)]'
+                            ? 'bg-white text-[#060A12] shadow-[0_10px_30px_rgba(255,255,255,0.08)]'
                             : 'text-[#8C99AD] hover:text-white'
                             }`}
                         >

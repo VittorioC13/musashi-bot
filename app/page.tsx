@@ -51,13 +51,15 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-[var(--bg-primary)]">
-      <header className="relative z-50 flex items-center justify-between w-full gap-4 border-b border-[var(--border-primary)] bg-[var(--bg-primary)] px-4 py-4 sm:px-6 lg:px-[80px]">
+    <div className="flex flex-col w-full bg-[#060A12]">
+      <header className="relative z-50 flex items-center justify-between w-full gap-4 border-b border-[var(--border-primary)] bg-[#060A12] px-4 py-4 sm:px-6 lg:px-[80px]">
         <div className="font-jetbrains text-xl font-bold tracking-[1px] text-[var(--text-primary)] sm:text-[22px]">
           MUSASHI
         </div>
         <nav className={`${isCompactLayout ? 'hidden' : 'hidden md:flex'} items-center gap-8`}>
           <a href="/mission" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">MISSION</a>
+          <a href="/get-started" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">GET STARTED</a>
+          <a href="https://musashitechnologiesllc.mintlify.app/" target="_blank" rel="noopener noreferrer" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">DOCS</a>
           <a href="/ai" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">API</a>
           <a href="/pricing" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">PRICING</a>
           <a href="/privacy" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">PRIVACY</a>
@@ -89,8 +91,8 @@ export default function Home() {
       </header>
 
       {mobileMenuOpen ? (
-        <div className={`fixed inset-0 z-40 bg-[#05070D]/88 backdrop-blur-md ${isCompactLayout ? '' : 'md:hidden'}`}>
-          <div className="absolute inset-x-4 top-[76px] rounded-[28px] border border-[#FFFFFF14] bg-[linear-gradient(180deg,#0B1018_0%,#080C12_100%)] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
+        <div className={`fixed inset-0 z-40 bg-[#060A12]/90 backdrop-blur-md ${isCompactLayout ? '' : 'md:hidden'}`}>
+          <div className="absolute inset-x-4 top-[76px] rounded-[28px] border border-[#FFFFFF14] bg-[#060A12] p-5 shadow-[0_30px_120px_rgba(0,0,0,0.45)]">
             <div className="mb-5 flex items-center justify-between border-b border-[#FFFFFF10] pb-4">
               <div>
                 <div className="font-jetbrains text-[10px] uppercase tracking-[0.22em] text-[#8C99AD]">Mobile Menu</div>
@@ -105,8 +107,14 @@ export default function Home() {
               <a href="/mission" onClick={() => setMobileMenuOpen(false)} className="border border-[#FFFFFF12] bg-[#FFFFFF06] px-4 py-4 font-jetbrains text-xs font-semibold tracking-[0.08em] text-white transition-colors hover:bg-[#FFFFFF10]">
                 MISSION
               </a>
+              <a href="/get-started" onClick={() => setMobileMenuOpen(false)} className="border border-[#FFFFFF12] bg-[#FFFFFF06] px-4 py-4 font-jetbrains text-xs font-semibold tracking-[0.08em] text-white transition-colors hover:bg-[#FFFFFF10]">
+                GET STARTED
+              </a>
+              <a href="https://musashitechnologiesllc.mintlify.app/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="border border-[#FFFFFF12] bg-[#FFFFFF06] px-4 py-4 font-jetbrains text-xs font-semibold tracking-[0.08em] text-white transition-colors hover:bg-[#FFFFFF10]">
+                DOCS
+              </a>
               <a href="/ai" onClick={() => setMobileMenuOpen(false)} className="border border-[#FFFFFF12] bg-[#FFFFFF06] px-4 py-4 font-jetbrains text-xs font-semibold tracking-[0.08em] text-white transition-colors hover:bg-[#FFFFFF10]">
-                API DOCS
+                API CONSOLE
               </a>
               <a href="/pricing" onClick={() => setMobileMenuOpen(false)} className="border border-[#FFFFFF12] bg-[#FFFFFF06] px-4 py-4 font-jetbrains text-xs font-semibold tracking-[0.08em] text-white transition-colors hover:bg-[#FFFFFF10]">
                 PRICING
@@ -122,7 +130,7 @@ export default function Home() {
                 onClick={handleInstallClick}
                 className="bg-white px-4 py-4 text-center"
               >
-                <span className="font-jetbrains text-[11px] font-bold text-[#0A0A0F]">SETUP</span>
+                <span className="font-jetbrains text-[11px] font-bold text-[#060A12]">SETUP</span>
               </button>
               <SmoothScrollLink
                 targetId="see-the-difference"
@@ -136,8 +144,7 @@ export default function Home() {
         </div>
       ) : null}
 
-      <section className={`relative w-full overflow-hidden bg-[var(--bg-primary)] ${isCompactLayout ? '' : 'lg:h-[860px]'}`}>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0F] via-[#0A0A0F] to-[#0F0F1A] opacity-80" />
+      <section className={`relative w-full overflow-hidden bg-[#060A12] ${isCompactLayout ? '' : 'lg:h-[860px]'}`}>
 
         <div className={`relative z-10 flex w-full max-w-[560px] flex-col gap-5 px-4 py-12 sm:px-6 sm:py-16 ${isCompactLayout ? '' : 'lg:absolute lg:left-[80px] lg:top-[100px] lg:w-[500px] lg:gap-7 lg:px-0 lg:py-0'}`}>
           <div className={`flex items-center gap-2 ${isCompactLayout ? '' : 'lg:hidden'}`}>
@@ -153,21 +160,29 @@ export default function Home() {
             In the future, your agents scroll and trade for you.
           </p>
 
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <div className="flex w-full max-w-[368px] flex-col gap-3">
+            {/* Row 1: Install + See Demo */}
+            <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
               <button
                 type="button"
                 onClick={handleInstallClick}
-                className="bg-[var(--text-primary)] px-8 py-[14px] text-center transition-opacity hover:opacity-90"
+                className="w-full bg-[var(--text-primary)] px-8 py-[14px] text-center transition-opacity hover:opacity-90"
               >
                 <span className="font-jetbrains text-xs font-bold text-[var(--bg-primary)]">
                   {isCompactLayout ? 'Install' : showInstallCode ? 'Hide Setup' : 'Install'}
                 </span>
               </button>
-              <SmoothScrollLink targetId="see-the-difference" className="border border-[var(--border-lighter)] bg-[var(--overlay-light)] px-8 py-[14px] text-center transition-colors hover:bg-[var(--overlay-lighter)]">
+              <SmoothScrollLink targetId="see-the-difference" className="w-full border border-[#FFFFFF20] bg-[#FFFFFF08] px-8 py-[14px] text-center transition-colors hover:bg-[#FFFFFF12]">
                 <span className="font-jetbrains text-xs font-bold text-[var(--text-primary)]">See Demo</span>
               </SmoothScrollLink>
             </div>
+            {/* Row 2: Get Started — full width matching row above */}
+            <a
+              href="/get-started"
+              className="flex w-full items-center justify-center border border-[#00FF88]/35 bg-[#00FF88]/6 py-[14px] text-center transition-colors hover:border-[#00FF88]/60 hover:bg-[#00FF88]/10"
+            >
+              <span className="font-grotesk text-[15px] font-bold tracking-[-0.3px] text-[#00FF88]">Get Started →</span>
+            </a>
             <span className="font-jetbrains text-[11px] font-normal text-[var(--text-tertiary)]">
               Free • No Rate Limits • REST API + Agent SDK
             </span>
@@ -198,7 +213,7 @@ export default function Home() {
 
           <div
             ref={installSectionRef}
-            className={`rounded-[28px] border border-[#FFFFFF14] bg-[#060A12]/88 p-4 shadow-[0_24px_80px_rgba(0,0,0,0.34)] sm:p-5 ${isCompactLayout ? '' : 'lg:hidden'}`}
+            className={`rounded-[28px] border border-[#FFFFFF14] bg-[#060A12] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.34)] sm:p-5 ${isCompactLayout ? '' : 'lg:hidden'}`}
           >
             <div>
               <h2 className="font-grotesk text-[24px] font-semibold leading-none text-white sm:text-[26px]">
@@ -240,114 +255,168 @@ export default function Home() {
         <TerminalDemo compactLayout={isCompactLayout} />
       </div>
 
-      <section className="flex w-full flex-col items-center gap-12 bg-[var(--bg-primary)] px-4 py-16 sm:px-6 lg:px-[120px] lg:py-[80px]">
-        <h2 className="font-grotesk text-[32px] font-bold tracking-[-1px] text-[var(--text-primary)] text-center md:text-[42px]">
-          Built for Trading Bots
-        </h2>
+      {/* ── Unified features section ── */}
+      <section className="flex w-full flex-col items-center gap-10 bg-[#060A12] px-4 py-16 sm:px-6 lg:px-[120px] lg:py-[80px]">
+        <div className="flex w-full max-w-[1100px] flex-col items-center gap-3 text-center">
+          <h2 className="font-grotesk text-[32px] font-bold tracking-[-1px] text-[var(--text-primary)] md:text-[42px]">
+            Everything your agent needs
+          </h2>
+          <p className="max-w-[480px] font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+            Real-time signals from social data — accessible via Claude, REST API, or SDK. No infrastructure required.
+          </p>
+        </div>
 
-        <div className="grid w-full max-w-[1100px] grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-8">
-          <div className="flex flex-col gap-6 border border-[var(--border-primary)] bg-[var(--bg-secondary)] p-6 sm:p-8 lg:p-10">
-            <div className="flex items-center gap-3">
-              <svg className="h-6 w-6 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8l-5-5zM5 19V5h10v4h4v10H5z"/>
-              </svg>
-              <h3 className="font-grotesk text-xl font-semibold text-[var(--text-primary)]">
-                Automated Feed System
-              </h3>
+        <div className="flex w-full max-w-[1100px] flex-col gap-6">
+
+          {/* MCP — flagship full-width card */}
+          <div className="flex flex-col gap-0 border border-[#00FF88]/25 bg-[#060A12] lg:flex-row">
+            <div className="flex flex-col justify-between gap-6 p-7 lg:w-[55%] lg:p-10">
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="border border-[#00FF88]/30 bg-[#00FF88]/10 px-2 py-0.5 font-jetbrains text-[10px] font-bold uppercase tracking-[0.14em] text-[#00FF88]">New</span>
+                  <span className="font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[var(--text-tertiary)]">Native AI Integration</span>
+                </div>
+                <h3 className="font-grotesk text-[26px] font-bold leading-[1.1] tracking-[-0.5px] text-[var(--text-primary)] lg:text-[30px]">
+                  Use Musashi directly inside Claude
+                </h3>
+                <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+                  Connect the MCP server once, then ask Claude anything — arbitrage opportunities, market briefs, smart money flows, wallet positions. 14 tools, zero code required.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="/get-started"
+                  className="bg-[var(--text-primary)] px-5 py-3 font-jetbrains text-xs font-bold text-[var(--bg-primary)] transition-opacity hover:opacity-90"
+                >
+                  Connect to Claude →
+                </a>
+                <a
+                  href="https://github.com/MusashiBot/musashi-mcp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-[var(--border-primary)] bg-transparent px-5 py-3 font-jetbrains text-xs font-bold text-[var(--text-primary)] transition-colors hover:bg-[var(--overlay-light)]"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
-            <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
-              Monitors 71 high-signal Twitter accounts across 8 categories and matches tweets to markets every 2 minutes.
-            </p>
-            <div className="flex flex-col gap-2">
-              <span className="font-jetbrains text-xs text-[var(--text-tertiary)]">Categories tracked:</span>
-              <div className="flex flex-wrap gap-2">
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">CRYPTO</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">POLITICS</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">ECONOMICS</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">TECH</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">SPORTS</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">GEOPOLITICS</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">FINANCE</span>
-                <span className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">BREAKING NEWS</span>
+            <div className="border-t border-[#00FF88]/15 bg-[#03070D] p-6 lg:w-[45%] lg:border-l lg:border-t-0 lg:p-8">
+              <div className="mb-4 font-jetbrains text-[10px] uppercase tracking-[0.14em] text-[var(--text-tertiary)]">// Example conversation</div>
+              <div className="space-y-4">
+                {[
+                  { role: 'you', text: 'What are the top arbitrage opportunities right now?' },
+                  { role: 'claude', text: 'Found 3 opportunities. Largest: 7% spread on BTC $100k — Polymarket 63% vs Kalshi 70%. Suggested action: buy YES on Polymarket.' },
+                  { role: 'you', text: 'Which crypto markets have smart money flowing in?' },
+                  { role: 'claude', text: '4 markets showing institutional activity. Highest wallet concentration: ETH ETF approval (83% held by top 10 wallets).' },
+                ].map((msg, i) => (
+                  <div key={i} className="flex gap-3">
+                    <span className={`flex-shrink-0 font-jetbrains text-[11px] font-bold ${msg.role === 'you' ? 'text-[var(--text-tertiary)]' : 'text-[#00FF88]'}`}>
+                      {msg.role === 'you' ? 'You' : 'Claude'}
+                    </span>
+                    <p className="font-jetbrains text-[12px] leading-[1.7] text-[var(--text-secondary)]">{msg.text}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 grid grid-cols-2 gap-2 border-t border-[var(--border-primary)] pt-5">
+                <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
+                  <span className="block font-jetbrains text-[10px] text-[var(--text-tertiary)]">TOOLS</span>
+                  <span className="font-jetbrains text-sm font-bold text-[var(--text-primary)]">14</span>
+                </div>
+                <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
+                  <span className="block font-jetbrains text-[10px] text-[var(--text-tertiary)]">AI CLIENTS</span>
+                  <span className="font-jetbrains text-sm font-bold text-[var(--text-primary)]">Claude · GPT</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 border border-[var(--border-primary)] bg-[var(--bg-secondary)] p-6 sm:p-8 lg:p-10">
-            <div className="flex items-center gap-3">
-              <svg className="h-6 w-6 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
-              </svg>
-              <h3 className="font-grotesk text-xl font-semibold text-[var(--text-primary)]">
-                Trading Signals
-              </h3>
-            </div>
-            <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
-              AI-powered sentiment analysis classifies each tweet as bullish, bearish, or neutral with confidence scores, direction, edge, and urgency.
-            </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-4 py-3">
-                <span className="font-jetbrains text-xs font-bold text-[#00FF88]">BULLISH</span>
-                <div className="mt-1 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Long signal</div>
-              </div>
-              <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-4 py-3">
-                <span className="font-jetbrains text-xs font-bold text-[#FF4444]">BEARISH</span>
-                <div className="mt-1 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Short signal</div>
-              </div>
-              <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-4 py-3">
-                <span className="font-jetbrains text-xs font-bold text-[#9CA3AF]">NEUTRAL</span>
-                <div className="mt-1 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Hold position</div>
-              </div>
-            </div>
-          </div>
+          {/* 4 signal feature cards — 2×2 */}
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
-          <div className="flex flex-col gap-6 border border-[var(--border-primary)] bg-[var(--bg-secondary)] p-6 sm:p-8 lg:p-10">
-            <div className="flex items-center gap-3">
-              <svg className="h-6 w-6 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10l5 5 5-5z"/>
-              </svg>
-              <h3 className="font-grotesk text-xl font-semibold text-[var(--text-primary)]">
-                Arbitrage Detection
-              </h3>
+            {/* Automated Feed */}
+            <div className="flex flex-col gap-5 border border-[var(--border-primary)] bg-[#060A12] p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <svg className="h-5 w-5 flex-shrink-0 fill-[#00FF88]" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+                <h3 className="font-grotesk text-lg font-semibold text-[var(--text-primary)]">Automated Feed</h3>
+              </div>
+              <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+                Monitors 71 high-signal accounts across 8 categories. Every tweet is matched to relevant markets and labeled with urgency — updated every 2 minutes.
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {['CRYPTO', 'POLITICS', 'ECONOMICS', 'TECH', 'SPORTS', 'GEOPOLITICS', 'FINANCE', 'BREAKING'].map(c => (
+                  <span key={c} className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-2 py-1 font-jetbrains text-[10px] text-[var(--text-secondary)]">{c}</span>
+                ))}
+              </div>
             </div>
-            <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
-              Cross-platform price discrepancy detection between Polymarket and Kalshi with filters for spread, confidence, and category.
-            </p>
-            <div className="flex items-center gap-2 border border-[var(--border-primary)] bg-[var(--overlay-lighter)] p-3">
-              <span className="font-jetbrains text-xs text-[var(--text-secondary)]">Example: Polymarket 63% → Kalshi 70% =</span>
-              <span className="font-jetbrains text-xs font-bold text-[#00FF88]">7% spread</span>
-            </div>
-          </div>
 
-          <div className="flex flex-col gap-6 border border-[var(--border-primary)] bg-[var(--bg-secondary)] p-6 sm:p-8 lg:p-10">
-            <div className="flex items-center gap-3">
-              <svg className="h-6 w-6 fill-[#00FF88]" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/>
-              </svg>
-              <h3 className="font-grotesk text-xl font-semibold text-[var(--text-primary)]">
-                Market Movers
-              </h3>
-            </div>
-            <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
-              Tracks major price changes using stored price history and real-time polling to surface 1 hour and 24 hour movement.
-            </p>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
-                <span className="font-jetbrains text-[10px] text-[var(--text-tertiary)]">1H CHANGE</span>
-                <span className="ml-2 font-jetbrains text-sm font-bold text-[#00FF88]">+12%</span>
+            {/* Trading Signals */}
+            <div className="flex flex-col gap-5 border border-[var(--border-primary)] bg-[#060A12] p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <svg className="h-5 w-5 flex-shrink-0 fill-[#00FF88]" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                <h3 className="font-grotesk text-lg font-semibold text-[var(--text-primary)]">Trading Signals</h3>
               </div>
-              <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
-                <span className="font-jetbrains text-[10px] text-[var(--text-tertiary)]">24H CHANGE</span>
-                <span className="ml-2 font-jetbrains text-sm font-bold text-[#FF4444]">-8%</span>
+              <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+                AI sentiment analysis returns direction, confidence, edge, and urgency for every market match. Plugs directly into your trading logic.
+              </p>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2 text-center">
+                  <div className="font-jetbrains text-xs font-bold text-[#00FF88]">BULLISH</div>
+                  <div className="mt-0.5 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Long</div>
+                </div>
+                <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2 text-center">
+                  <div className="font-jetbrains text-xs font-bold text-[#FF4444]">BEARISH</div>
+                  <div className="mt-0.5 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Short</div>
+                </div>
+                <div className="border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2 text-center">
+                  <div className="font-jetbrains text-xs font-bold text-[#9CA3AF]">NEUTRAL</div>
+                  <div className="mt-0.5 font-jetbrains text-[10px] text-[var(--text-tertiary)]">Hold</div>
+                </div>
               </div>
             </div>
+
+            {/* Arbitrage */}
+            <div className="flex flex-col gap-5 border border-[var(--border-primary)] bg-[#060A12] p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <svg className="h-5 w-5 flex-shrink-0 fill-[#00FF88]" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                <h3 className="font-grotesk text-lg font-semibold text-[var(--text-primary)]">Arbitrage Detection</h3>
+              </div>
+              <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+                Matches the same event across Polymarket and Kalshi in real time. Returns spread, direction, and profit potential — filtered by confidence and category.
+              </p>
+              <div className="flex items-center gap-2 border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-4 py-3">
+                <span className="font-jetbrains text-xs text-[var(--text-secondary)]">Poly 63% → Kalshi 70%</span>
+                <span className="ml-auto font-jetbrains text-xs font-bold text-[#00FF88]">7% spread</span>
+              </div>
+            </div>
+
+            {/* Market Movers */}
+            <div className="flex flex-col gap-5 border border-[var(--border-primary)] bg-[#060A12] p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <svg className="h-5 w-5 flex-shrink-0 fill-[#00FF88]" viewBox="0 0 24 24"><path d="M3 13h2v8H3v-8zm4-8h2v16H7V5zm4 4h2v12h-2V9zm4-4h2v16h-2V5zm4 7h2v9h-2v-9z"/></svg>
+                <h3 className="font-grotesk text-lg font-semibold text-[var(--text-primary)]">Market Movers</h3>
+              </div>
+              <p className="font-jetbrains text-sm leading-[1.8] text-[var(--text-secondary)]">
+                Surfaces markets with significant price movement over 1h or 24h windows using stored price history and real-time polling.
+              </p>
+              <div className="flex gap-3">
+                <div className="flex-1 border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
+                  <span className="font-jetbrains text-[10px] text-[var(--text-tertiary)]">1H CHANGE</span>
+                  <span className="ml-2 font-jetbrains text-sm font-bold text-[#00FF88]">+12%</span>
+                </div>
+                <div className="flex-1 border border-[var(--border-primary)] bg-[var(--overlay-lighter)] px-3 py-2">
+                  <span className="font-jetbrains text-[10px] text-[var(--text-tertiary)]">24H CHANGE</span>
+                  <span className="ml-2 font-jetbrains text-sm font-bold text-[#FF4444]">-8%</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       <FAQ />
 
-      <section className="flex w-full min-h-[360px] border border-[var(--border-primary)] bg-[var(--bg-primary)] px-4 py-20 sm:px-6 lg:min-h-[500px] lg:px-[120px] lg:py-[120px]">
+      <section className="flex w-full min-h-[360px] border border-[var(--border-primary)] bg-[#060A12] px-4 py-20 sm:px-6 lg:min-h-[500px] lg:px-[120px] lg:py-[120px]">
         <div className="mx-auto flex w-full flex-col items-center justify-center gap-10">
           <h2 className="font-grotesk text-[42px] font-bold leading-[1.1] tracking-[-2px] text-[var(--text-primary)] text-center sm:text-[56px] lg:text-[72px]">
             Built for AI agents
@@ -359,7 +428,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex w-full flex-col gap-6 border-t border-[var(--border-primary)] bg-[var(--bg-secondary)] px-4 py-12 sm:px-6 lg:px-[120px]">
+      <footer className="flex w-full flex-col gap-6 border-t border-[var(--border-primary)] bg-[#060A12] px-4 py-12 sm:px-6 lg:px-[120px]">
         <div className="flex w-full flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="flex flex-col gap-3">
             <span className="font-jetbrains text-base font-semibold tracking-[1px] text-[var(--text-primary)]">
@@ -377,7 +446,9 @@ export default function Home() {
               </span>
               <nav className="flex flex-col gap-2">
                 <a href="/mission" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">Mission</a>
-                <a href="/ai" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">API Docs</a>
+                <a href="/get-started" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">Get Started</a>
+                <a href="https://musashitechnologiesllc.mintlify.app/" target="_blank" rel="noopener noreferrer" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">Docs</a>
+                <a href="/ai" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">API Console</a>
                 <a href="/pricing" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">Pricing</a>
                 <a href="/privacy" className="font-jetbrains text-xs font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]">Privacy</a>
               </nav>
